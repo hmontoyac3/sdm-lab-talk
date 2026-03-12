@@ -1,0 +1,1599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scientific Decision-Making — Revised</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/white.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --ivory:  #F9F7F3;
+      --navy:   #1C2B3A;
+      --navy2:  #2E4259;
+      --terra:  #C4622D;
+      --teal:   #3D7A6E;
+      --muted:  #7A7A6A;
+      --rule:   #DDD8CC;
+      --warm:   #FFF3EC;
+      --light-teal: #EEF6F5;
+      --light-navy: #EEF2F6;
+    }
+
+    .reveal-viewport { background: var(--ivory); }
+    .reveal {
+      font-family: 'Inter', system-ui, sans-serif;
+      color: var(--navy);
+      font-size: 24px;
+    }
+    .reveal h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4em; font-weight: 600;
+      color: var(--navy); text-transform: none;
+      letter-spacing: -.01em; line-height: 1.15; margin: 0;
+    }
+    .reveal p { font-size: .82em; line-height: 1.65; color: #333; margin: 0; }
+    .reveal ul, .reveal ol { margin: 0; padding: 0; }
+    .reveal .slides section {
+      text-align: left;
+      padding: 1.4em 2.2em 3em;
+      box-sizing: border-box;
+      top: 0 !important;
+      width: 100%; height: 100%;
+      overflow: hidden;
+    }
+
+    /* ── SECTION NAV ────────────────────────────────── */
+    .snav {
+      position: absolute; bottom: .55em; left: 0; right: 0;
+      display: flex; justify-content: center; align-items: center;
+      gap: .5em; font-size: .42em; letter-spacing: .08em;
+      text-transform: uppercase; color: var(--muted); font-weight: 600;
+      font-family: 'Inter', sans-serif;
+    }
+    .snav .s { padding: .15em .5em; }
+    .snav .s.on { color: var(--terra); font-weight: 700; border-bottom: 1.5px solid var(--terra); }
+    .snav .sep { color: var(--rule); }
+
+    /* ── LABEL ──────────────────────────────────────── */
+    .label {
+      font-size: .52em; letter-spacing: .13em;
+      text-transform: uppercase; color: var(--terra);
+      font-weight: 700; margin-bottom: .3em;
+      font-family: 'Inter', sans-serif;
+    }
+
+    hr.rule {
+      display: block; border: none;
+      border-top: 2px solid var(--terra);
+      width: 2.2em; margin: .4em 0 .9em;
+    }
+
+    /* ── STAT BLOCKS ────────────────────────────────── */
+    .stats { display: flex; gap: .9em; margin-top: .9em; align-items: stretch; }
+    .stat {
+      flex: 1; background: var(--warm);
+      border-left: 3px solid var(--terra);
+      padding: .7em .9em;
+    }
+    .stat .n {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.75em; font-weight: 700;
+      color: var(--terra); line-height: 1;
+    }
+    .stat .lbl { font-size: .62em; color: var(--muted); margin-top: .25em; line-height: 1.45; font-family: 'Inter', sans-serif; }
+    .stat.alt  { border-left-color: var(--teal);  background: var(--light-teal); }
+    .stat.alt  .n { color: var(--teal); }
+    .stat.dark { border-left-color: var(--navy2); background: var(--light-navy); }
+    .stat.dark .n { color: var(--navy2); }
+
+    /* ── STEP LIST ──────────────────────────────────── */
+    .steps { display: flex; flex-direction: column; gap: .5em; margin-top: .85em; }
+    .step  { display: flex; gap: .75em; align-items: flex-start; }
+    .step-n {
+      font-family: 'Playfair Display', serif;
+      font-size: 1em; font-weight: 700;
+      color: var(--terra); min-width: 1.3em; flex-shrink: 0;
+    }
+    .step-t { font-size: .73em; line-height: 1.6; color: #333; }
+    .step-t strong { color: var(--navy); font-weight: 600; }
+    .step-t em { color: var(--muted); font-style: italic; }
+
+    /* ── CALLOUT ────────────────────────────────────── */
+    .callout { background: var(--navy); padding: .85em 1.2em; margin-top: .9em; }
+    .callout-title {
+      font-family: 'Playfair Display', serif;
+      font-size: .88em; font-weight: 600; color: #fff; line-height: 1.4;
+    }
+
+    /* ── TWO-COL ────────────────────────────────────── */
+    .two-col { display: flex; gap: 1.8em; margin-top: .85em; align-items: flex-start; }
+    .col { flex: 1; }
+    .col.wider  { flex: 1.4; }
+    .col.narrow { flex: .75; }
+    .col img { width: 100%; box-shadow: 0 2px 14px rgba(0,0,0,.1); }
+
+    /* ── DIMENSION CARDS ────────────────────────────── */
+    .dims { display: flex; gap: .9em; margin-top: .9em; }
+    .dim {
+      flex: 1; border-top: 3px solid var(--terra);
+      padding: .85em .9em; background: #fff;
+      box-shadow: 0 1px 8px rgba(0,0,0,.07);
+    }
+    .dim.t2 { border-top-color: var(--teal); }
+    .dim.t3 { border-top-color: var(--navy2); }
+    .dim-title {
+      font-family: 'Playfair Display', serif;
+      font-size: .82em; font-weight: 700; color: var(--navy); margin-bottom: .35em;
+    }
+    .dim-items { font-size: .60em; color: var(--muted); margin-bottom: .3em; font-weight: 600; letter-spacing: .04em; }
+    .dim p { font-size: .66em; color: #555; line-height: 1.55; margin: 0; }
+
+    /* ── FUNNEL ─────────────────────────────────────── */
+    .funnel { display: flex; align-items: stretch; gap: .4em; margin-top: .85em; }
+    .fbox {
+      text-align: center; padding: .65em .55em;
+      background: #fff; border: 1px solid var(--rule); flex: 1;
+    }
+    .fbox .fn {
+      font-family: 'Playfair Display', serif;
+      font-size: 1em; font-weight: 700; color: var(--navy2);
+    }
+    .fbox .fl { font-size: .53em; color: var(--muted); margin-top: .2em; line-height: 1.35; }
+    .fbox.start .fn { font-size: 1.6em; color: var(--navy); }
+    .fbox.final { background: var(--warm); border-color: var(--terra); }
+    .fbox.final .fn { color: var(--terra); font-size: 1.6em; }
+    .farrow { font-size: .85em; color: var(--terra); display: flex; align-items: center; flex-shrink: 0; }
+
+    /* ── VALIDATION CHECKLIST ───────────────────────── */
+    .criteria { display: flex; flex-direction: column; gap: .45em; margin-top: .85em; }
+    .crit {
+      display: flex; gap: .8em; align-items: center;
+      padding: .55em .9em; background: #fff;
+      border: 1px solid var(--rule); border-left: 3px solid var(--teal);
+    }
+    .c-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1em; font-weight: 700; color: var(--teal); min-width: 1.3em;
+    }
+    .c-body { flex: 1; }
+    .c-title { font-size: .70em; font-weight: 600; color: var(--navy); }
+    .c-sub   { font-size: .60em; color: var(--muted); margin-top: .1em; line-height: 1.4; font-style: italic; }
+    .c-badge {
+      font-size: .50em; font-weight: 700; letter-spacing: .07em;
+      text-transform: uppercase; padding: .2em .6em;
+      background: #E8F5F2; color: var(--teal); flex-shrink: 0;
+    }
+
+    /* ── DELTA COMPARE ──────────────────────────────── */
+    .delta-compare { display: flex; gap: 1em; margin-top: .9em; }
+    .delta {
+      flex: 1; padding: .9em 1.1em;
+      background: var(--warm); border-top: 4px solid var(--terra);
+    }
+    .delta.minor { background: var(--light-teal); border-top-color: var(--teal); }
+    .delta-lbl {
+      font-size: .58em; font-weight: 700; color: var(--navy);
+      text-transform: uppercase; letter-spacing: .06em; margin-bottom: .3em;
+    }
+    .delta-n {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.1em; font-weight: 700; color: var(--terra); line-height: 1;
+    }
+    .delta.minor .delta-n { color: var(--teal); }
+    .delta-sub { font-size: .58em; color: var(--muted); margin-top: .25em; line-height: 1.4; }
+
+    /* ── OPEN QUESTIONS ─────────────────────────────── */
+    .qs { display: flex; flex-direction: column; gap: .6em; margin-top: .85em; }
+    .q {
+      display: flex; gap: .8em; align-items: flex-start;
+      padding: .65em .9em; background: #fff;
+      border: 1px solid var(--rule); border-left: 4px solid var(--terra);
+    }
+    .q.amber { border-left-color: #C89020; }
+    .q-tag {
+      font-size: .50em; font-weight: 700; letter-spacing: .07em;
+      text-transform: uppercase; color: var(--terra);
+      min-width: 4.5em; padding-top: .2em; flex-shrink: 0;
+    }
+    .q.amber .q-tag { color: #9A6E10; }
+    .q-body { font-size: .70em; line-height: 1.6; color: #333; }
+    .q-body strong { color: var(--navy); display: block; margin-bottom: .1em; font-weight: 600; }
+
+    /* ── CONTRIBUTIONS ──────────────────────────────── */
+    .contrib-grid { display: flex; gap: 1.1em; margin-top: .9em; }
+    .contrib {
+      flex: 1; border-top: 4px solid var(--terra);
+      padding: .9em 1em; background: #fff;
+      box-shadow: 0 2px 12px rgba(0,0,0,.07);
+    }
+    .contrib.c2 { border-top-color: var(--navy2); }
+    .contrib-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2em; font-weight: 700;
+      color: var(--terra); line-height: 1; margin-bottom: .3em;
+    }
+    .contrib.c2 .contrib-num { color: var(--navy2); }
+    .contrib-title {
+      font-family: 'Playfair Display', serif;
+      font-size: .88em; font-weight: 600;
+      color: var(--navy); margin-bottom: .5em; line-height: 1.3;
+    }
+    .contrib ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: .35em; }
+    .contrib li {
+      font-size: .63em; color: #444; line-height: 1.5;
+      padding-left: 1em; position: relative;
+    }
+    .contrib li::before { content: '→'; position: absolute; left: 0; color: var(--terra); font-weight: 700; }
+    .contrib.c2 li::before { color: var(--navy2); }
+
+    /* ── BIG STATS ──────────────────────────────────── */
+    .big-stats { display: flex; margin-top: 1.1em; }
+    .bstat {
+      flex: 1; padding: 1em 1.1em;
+      border-right: 1px solid var(--rule);
+    }
+    .bstat:last-child { border-right: none; }
+    .bstat .bn {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6em; font-weight: 700; color: var(--terra); line-height: 1;
+    }
+    .bstat .bl { font-size: .60em; color: var(--muted); margin-top: .3em; line-height: 1.5; }
+
+    /* ── ICC BARS ───────────────────────────────────── */
+    .icc-bars { display: flex; flex-direction: column; gap: .75em; margin-top: .85em; }
+    .icc-row  { display: flex; align-items: center; gap: .9em; }
+    .icc-dim  { font-size: .64em; font-weight: 500; color: var(--navy); min-width: 9.5em; }
+    .icc-track { flex: 1; height: 13px; background: #E8E4DE; position: relative; }
+    .icc-fill  { height: 100%; background: var(--terra); }
+    .icc-pct   { font-size: .60em; color: var(--terra); font-weight: 700; min-width: 3em; }
+    .icc-thresh {
+      position: absolute; top: 0; bottom: 0;
+      width: 2px; background: var(--navy); left: 5%;
+    }
+
+    /* ── JOURNAL CARDS ──────────────────────────────── */
+    .journal-grid { display: flex; gap: 1em; margin-top: .9em; }
+    .journal {
+      flex: 1; padding: .85em 1em; background: #fff;
+      border: 1px solid var(--rule); border-top: 3px solid var(--muted);
+    }
+    .journal.open { border-top-color: var(--terra); background: var(--warm); }
+    .j-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05em; font-weight: 700; color: var(--navy); margin-bottom: .4em;
+    }
+    .journal.open .j-name { color: var(--terra); }
+    .j-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: .28em; }
+    .j-list li { font-size: .62em; color: #444; padding-left: .9em; position: relative; line-height: 1.45; }
+    .j-list li::before { content: '·'; position: absolute; left: 0; color: var(--muted); }
+
+    /* ── VALIDATION TABLE ───────────────────────────── */
+    .val-table { width: 100%; border-collapse: collapse; margin-top: .85em; font-size: .62em; }
+    .val-table thead tr { border-bottom: 2px solid var(--navy); }
+    .val-table th { font-weight: 600; color: var(--navy); padding: .4em .6em; text-align: left; font-family: 'Inter', sans-serif; }
+    .val-table tbody tr { border-bottom: 1px solid var(--rule); }
+    .val-table tbody tr:last-child { border-bottom: none; }
+    .val-table td { padding: .4em .6em; color: #333; vertical-align: top; line-height: 1.4; }
+    .val-table td:first-child { font-weight: 600; color: var(--navy); white-space: nowrap; }
+    .val-table td.badge {
+      color: var(--teal); font-weight: 700; font-size: .9em;
+      letter-spacing: .05em; white-space: nowrap;
+    }
+
+    /* ── FINDING HIGHLIGHT BOX ──────────────────────── */
+    .finding-box {
+      border: 1.5px solid var(--terra);
+      padding: .7em 1em; margin-top: .85em;
+      background: var(--warm);
+    }
+    .finding-box .fb-label {
+      font-size: .5em; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--terra); margin-bottom: .3em;
+    }
+    .finding-box .fb-text { font-size: .72em; color: var(--navy); line-height: 1.55; }
+    .finding-box .fb-text strong { font-weight: 700; }
+
+    /* ── NOTE ───────────────────────────────────────── */
+    .note {
+      font-size: .60em; color: var(--muted); font-style: italic;
+      margin-top: .75em; padding-left: .8em;
+      border-left: 2px solid var(--rule); line-height: 1.55;
+    }
+
+    /* ── PROGRESS / SLIDE NUMBER ────────────────────── */
+    .reveal .progress { color: var(--terra); height: 2px; }
+    .reveal .slide-number { font-size: 10px; color: var(--rule); background: none; bottom: 8px; left: 12px; right: auto; }
+
+    /* ════════════════════════════════════════════════════
+       SPECIAL SLIDES
+    ═══════════════════════════════════════════════════════ */
+
+    /* TITLE */
+    .title-sl {
+      padding: 0 !important;
+      display: grid !important;
+      grid-template-columns: 6px 1fr;
+      height: 100%;
+    }
+    .title-stripe { background: var(--terra); }
+    .title-body   { padding: 2.4em 2.8em; display: flex; flex-direction: column; justify-content: center; }
+    .t-eyebrow    { font-size: .48em; letter-spacing: .14em; text-transform: uppercase; color: var(--terra); font-weight: 700; margin-bottom: .9em; font-family: 'Inter', sans-serif; }
+    .t-h          { font-family: 'Playfair Display', serif; font-size: 2.4em; font-weight: 700; color: var(--navy); line-height: 1.1; margin-bottom: .2em; }
+    .t-sub        { font-family: 'Playfair Display', serif; font-style: italic; font-size: .95em; color: var(--muted); margin-bottom: 2.2em; }
+    .t-meta       { font-size: .58em; color: var(--muted); line-height: 2; border-top: 1px solid var(--rule); padding-top: .85em; font-family: 'Inter', sans-serif; }
+    .t-meta strong { color: var(--navy); font-weight: 600; }
+
+    /* HOOK */
+    .hook-sl {
+      display: flex !important; flex-direction: column;
+      justify-content: center; height: 100%;
+      padding: 1.8em 3.2em 3.5em !important;
+    }
+    .hook-q {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.85em; line-height: 1.25;
+      color: var(--navy); max-width: 82%;
+    }
+    .hook-q em { color: var(--terra); font-style: normal; }
+    .hook-follow {
+      font-size: .75em; color: var(--muted);
+      margin-top: 1.3em; max-width: 60%; line-height: 1.75;
+      border-left: 2px solid var(--rule); padding-left: .9em;
+    }
+
+    /* THANK YOU */
+    .ty-sl {
+      padding: 0 !important;
+      display: grid !important;
+      grid-template-columns: 6px 1fr;
+      height: 100%;
+    }
+    .ty-stripe { background: var(--terra); }
+    .ty-body   { padding: 2.2em 2.8em; display: flex; flex-direction: column; justify-content: center; }
+    .ty-h      { font-family: 'Playfair Display', serif; font-size: 2.2em; font-weight: 700; color: var(--navy); margin-bottom: .2em; }
+    .ty-sub    { font-family: 'Playfair Display', serif; font-style: italic; font-size: .95em; color: var(--muted); margin-bottom: 2em; }
+    .ty-meta   { font-size: .58em; color: var(--muted); line-height: 2; border-top: 1px solid var(--rule); padding-top: .85em; }
+    .ty-meta strong { color: var(--navy); }
+    .t-eyebrow-ty { font-size: .48em; letter-spacing: .14em; text-transform: uppercase; color: var(--terra); font-weight: 700; margin-bottom: .9em; font-family: 'Inter', sans-serif; }
+
+    /* APPENDIX OVERVIEW */
+    .app-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .5em; margin-top: .85em; }
+    .app-item {
+      display: flex; gap: .7em; align-items: flex-start;
+      padding: .5em .7em; background: #fff;
+      border: 1px solid var(--rule); border-left: 3px solid var(--muted);
+      cursor: pointer; text-decoration: none;
+      transition: border-left-color .15s, background .15s;
+    }
+    .app-item:hover { border-left-color: var(--terra); background: var(--warm); }
+    .app-id { font-size: .56em; font-weight: 700; color: var(--muted); min-width: 2em; padding-top: .2em; }
+    .app-text { font-size: .62em; color: #444; line-height: 1.4; }
+    .app-text strong { color: var(--navy); display: block; }
+
+    /* APPENDIX NAV LINKS (on content slides) */
+    .app-links { display: flex; flex-wrap: wrap; gap: .35em; margin-top: .7em; }
+    .app-link {
+      font-size: .46em; font-weight: 700; letter-spacing: .07em;
+      text-transform: uppercase; color: var(--muted);
+      border: 1px solid var(--rule); padding: .2em .55em;
+      cursor: pointer; text-decoration: none;
+      transition: color .15s, border-color .15s;
+      font-family: 'Inter', sans-serif;
+    }
+    .app-link:hover { color: var(--terra); border-color: var(--terra); }
+    .app-back {
+      display: inline-block; font-size: .50em; font-weight: 700;
+      letter-spacing: .07em; text-transform: uppercase;
+      color: #fff; background: var(--navy2);
+      padding: .28em .8em; cursor: pointer; text-decoration: none;
+      font-family: 'Inter', sans-serif; margin-bottom: .8em;
+    }
+    .app-back:hover { background: var(--terra); }
+
+    /* APPENDIX SLIDE CONTENT */
+    .app-sl-label {
+      font-size: .44em; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--muted); font-weight: 700; margin-bottom: .25em;
+      font-family: 'Inter', sans-serif;
+    }
+    .app-table { width: 100%; border-collapse: collapse; margin-top: .55em; font-size: .595em; }
+    .app-table thead tr { border-bottom: 2px solid var(--navy); }
+    .app-table th { font-weight: 600; color: var(--navy); padding: .35em .5em; text-align: left; }
+    .app-table tbody tr { border-bottom: 1px solid var(--rule); }
+    .app-table tbody tr:last-child { border-bottom: none; }
+    .app-table td { padding: .35em .5em; color: #333; vertical-align: top; line-height: 1.35; }
+    .app-table td:first-child { font-weight: 600; color: var(--navy2); }
+    .app-table .hi  { color: var(--terra); font-weight: 700; }
+    .app-table .lo  { color: var(--teal);  font-weight: 700; }
+    .app-table .dim { color: var(--muted); font-style: italic; }
+  </style>
+</head>
+<body>
+<div class="reveal"><div class="slides">
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     1 · TITLE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section class="title-sl">
+  <div class="title-stripe"></div>
+  <div class="title-body">
+    <div class="t-eyebrow">Work in Progress &nbsp;·&nbsp; March 2026</div>
+    <div class="t-h">Measuring Scientific<br>Decision-Making</div>
+    <div class="t-sub">Development, validation, and field deployment of a survey instrument.</div>
+    <div class="t-meta">
+      <strong>Helena Montoya</strong><br>
+      3rd year, PhD candidate &nbsp;·&nbsp; Management Department, Bocconi University<br>
+      Thomaz Theodorovicz (CBS) &amp; Arnaldo Camuffo
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     2 · MOTIVATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section>
+  <div class="label">Motivation</div>
+  <h2>SDM training works — but we cannot measure it outside the lab</h2>
+  <hr class="rule" />
+  <div class="steps" style="gap:1.2em; margin-top:.99em">
+    <div class="step">
+      <div class="step-n" style="color:var(--teal); font-size:1.5em">✓</div>
+      <div class="step-t" style="font-size:1.1em">
+        <strong style="color:var(--navy)">SDM training improves decision quality and organizational learning.</strong>
+        <span style="display:block; margin-top:.35em; font-size:.88em; color:var(--muted); font-style:italic">Camuffo et al. (2020, <em>Management Science</em>) &nbsp;·&nbsp; Camuffo et al. (2024, <em>SMJ</em>) &nbsp;·&nbsp; Zellweger &amp; Zenger (2023, <em>AMR</em>)</span>
+      </div>
+    </div>
+    <div class="step fragment fade-up">
+      <div class="step-n" style="color:var(--terra); font-size:1.5em">×</div>
+      <div class="step-t" style="font-size:1.1em">
+        <strong style="color:var(--navy)">The field lacks an instrument to assess SDM outside experimental settings.</strong>
+      </div>
+    </div>
+    <div class="step fragment fade-up">
+      <div class="step-n" style="color:var(--navy2); font-size:1.5em">→</div>
+      <div class="step-t" style="font-size:1.1em">
+        <strong style="color:var(--navy)">We develop and validate a 24-item SDM survey, then deploy it at field scale.</strong>
+      </div>
+    </div>
+  </div>
+  <div class="snav">
+    <span class="s on">Motivation</span><span class="sep">·</span>
+    <span class="s">Construct</span><span class="sep">·</span>
+    <span class="s">Validation</span><span class="sep">·</span>
+    <span class="s">Application</span><span class="sep">·</span>
+    <span class="s">Discussion</span>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     3 · FINDINGS PREVIEW + CONTRIBUTIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section>
+  <div class="label">Motivation</div>
+  <h2>We build the instrument — deploying it reveals three organizational patterns</h2>
+  <hr class="rule" />
+  <div class="stats fragment fade-up" style="margin-top:.85em">
+    <div class="stat">
+      <div class="n">1.1%</div>
+      <div class="lbl">between-firm ICC · SDM lives in individuals, not firms</div>
+    </div>
+    <div class="stat alt">
+      <div class="n">b = .07</div>
+      <div class="lbl">CEO vs. frontline · hierarchy shapes <em>how</em> managers reason</div>
+    </div>
+    <div class="stat dark">
+      <div class="n">+12 pp</div>
+      <div class="lbl">vignette accuracy gap · top vs. bottom SDM quintile</div>
+    </div>
+  </div>
+  <div class="two-col" style="margin-top:1em">
+    <div class="col">
+      <p style="font-size:.65em; font-weight:600; color:var(--terra); margin-bottom:.4em; text-transform:uppercase; letter-spacing:.06em">C1 · Instrument</p>
+      <p style="font-size:.70em">24-item formative scale · 3 dimensions · validated across 5 complementary criteria · 9,458 managers · 61 firms</p>
+    </div>
+    <div class="col">
+      <p style="font-size:.65em; font-weight:600; color:var(--navy2); margin-bottom:.4em; text-transform:uppercase; letter-spacing:.06em">C2 · Patterns</p>
+      <p style="font-size:.70em">SDM is individual-level · follows the hierarchy · predicts decision quality — none of this was observable before the instrument existed</p>
+    </div>
+  </div>
+  <div class="snav">
+    <span class="s on">Motivation</span><span class="sep">·</span>
+    <span class="s">Construct</span><span class="sep">·</span>
+    <span class="s">Validation</span><span class="sep">·</span>
+    <span class="s">Application</span><span class="sep">·</span>
+    <span class="s">Discussion</span>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     4 · CONSTRUCT — DEFINITION + HIERARCHY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section>
+  <div class="label">Construct</div>
+  <h2>SDM unfolds through six steps clustered into three non-interchangeable dimensions</h2>
+  <hr class="rule" />
+  <p style="font-size:.75em; color:var(--muted)">Problem diagnosis → causal theorizing → hypothesis formulation → evidence collection → evidence evaluation → belief adjustment. Each dimension is necessary; none is substitutable.</p>
+  <div class="dims" style="margin-top:.8em">
+    <div class="dim fragment fade-up">
+      <div class="dim-title">Causal Reasoning (CR)</div>
+      <div class="dim-items">Steps 1–3 &nbsp;·&nbsp; 11 items</div>
+      <p>Construct causal models; formulate testable hypotheses before committing to action. Foundational: without structured theory, evidence gathering becomes ad hoc.</p>
+    </div>
+    <div class="dim t2 fragment fade-up">
+      <div class="dim-title">Evidence Evaluation (EE)</div>
+      <div class="dim-items">Steps 4–5 &nbsp;·&nbsp; 9 items</div>
+      <p>Design and conduct tests; appraise evidence against prior hypotheses; seek disconfirming signals. Quality of evidence collection determines feedback informativeness.</p>
+    </div>
+    <div class="dim t3 fragment fade-up">
+      <div class="dim-title">Adaptive Learning (AL)</div>
+      <div class="dim-items">Step 6 &nbsp;·&nbsp; 4 items</div>
+      <p>Update beliefs proportionally to evidence; revise or abandon theories when disconfirming evidence accumulates. Distinct from EE: rigor in testing does not ensure belief updating.</p>
+    </div>
+  </div>
+  <div class="note fragment fade-up"><strong style="color:var(--navy)">Formative specification:</strong> dimensions define SDM rather than reflecting a single latent trait. Each is necessary and non-interchangeable — a manager can practice one without the others. Low inter-item correlations are expected and appropriate.</div>
+  <div class="snav">
+    <span class="s">Motivation</span><span class="sep">·</span>
+    <span class="s on">Construct</span><span class="sep">·</span>
+    <span class="s">Validation</span><span class="sep">·</span>
+    <span class="s">Application</span><span class="sep">·</span>
+    <span class="s">Discussion</span>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     5 · INSTRUMENT DEVELOPMENT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section>
+  <div class="label">Construct</div>
+  <h2>Four successive stages refined 40 candidate items to a validated 24</h2>
+  <hr class="rule" />
+  <p style="font-size:.66em; color:var(--muted)">Items generated deductively from the 6-step framework; grounded in semi-structured interviews with 12 senior managers (Feb–Mar 2023).</p>
+  <div class="funnel" style="margin-top:.7em">
+    <div class="fbox start">
+      <div class="fn">40</div>
+      <div class="fl">initial pool</div>
+    </div>
+    <div class="farrow">→</div>
+    <div class="fbox fragment fade-up">
+      <div class="fn">S1 · Face</div>
+      <div class="fl">ChatGPT identifies scientific pole per item · wrong-pole items revised · <em>no items cut</em></div>
+    </div>
+    <div class="farrow fragment">→</div>
+    <div class="fbox fragment fade-up">
+      <div class="fn">S2 · Content</div>
+      <div class="fl">16 SDM researchers (88% response) · randomly assigned: 7 "scientific" / 9 "opposite" · 8 items eliminated · scale: 7-pt → 5-pt</div>
+    </div>
+    <div class="farrow fragment">→</div>
+    <div class="fbox fragment fade-up">
+      <div class="fn">S3 · Construct</div>
+      <div class="fl">Nudge experiment · N = 462 managers · 3 conditions · items not sensitive to manipulation eliminated</div>
+    </div>
+    <div class="farrow fragment">→</div>
+    <div class="fbox final fragment fade-up">
+      <div class="fn">24</div>
+      <div class="fl">final items</div>
+    </div>
+  </div>
+  <div class="stats fragment fade-up" style="margin-top:.8em">
+    <div class="stat">
+      <div class="n">5-point</div>
+      <div class="lbl">Bipolar Likert · both poles are plausible behaviors · reduces social desirability bias</div>
+    </div>
+    <div class="stat alt">
+      <div class="n">Formative</div>
+      <div class="lbl">Dimensions define SDM — they do not reflect a single underlying trait · each is necessary and non-substitutable</div>
+    </div>
+    <div class="stat dark">
+      <div class="n">&lt;10 min</div>
+      <div class="lbl">Target completion time · field-deployable at scale</div>
+    </div>
+  </div>
+  <div class="snav">
+    <span class="s">Motivation</span><span class="sep">·</span>
+    <span class="s on">Construct</span><span class="sep">·</span>
+    <span class="s">Validation</span><span class="sep">·</span>
+    <span class="s">Application</span><span class="sep">·</span>
+    <span class="s">Discussion</span>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     6 · VALIDATION LOGIC + OVERVIEW
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section>
+  <div class="label">Validation</div>
+  <h2>Formative validation requires complementary criteria — no single statistic suffices</h2>
+  <hr class="rule" />
+  <table class="val-table fragment fade-up" style="margin-top:.6em">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Criterion</th>
+        <th>Method</th>
+        <th>Result</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Content validity</td>
+        <td>Expert survey (N = 16 researchers, random condition assignment); 12-manager interviews</td>
+        <td>8 items eliminated; domain coverage confirmed</td>
+        <td class="badge">✓</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Indicator non-redundancy</td>
+        <td>VIF for each item regressed on remaining 23</td>
+        <td>VIF 1.03–1.19 (threshold &lt; 3); tolerance .84–.97</td>
+        <td class="badge">✓</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Experimental sensitivity</td>
+        <td>RCT, N = 462, 3 priming conditions</td>
+        <td>d = 1.40 vs. placebo; d = 2.09 vs. intuitive; η² = .43; F(2,459) = 175.21, p &lt; .001</td>
+        <td class="badge">✓</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Structural distinguishability</td>
+        <td>CFA specification tests (3-factor vs. 2-factor)</td>
+        <td>Δχ² = 131.86, Δdf = 1, p &lt; .001 — 3 factors statistically distinct despite r(EE,AL) = .95</td>
+        <td class="badge">✓</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Behavioral prediction</td>
+        <td>Vignette decision accuracy (N = 9,458)</td>
+        <td>β = .12, stable across 4 specs; top vs. bottom quintile: 12 pp gap</td>
+        <td class="badge">✓</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>Convergent (partial)</td>
+        <td>Likely predictors (N ≈ 9,400): education, tenure, STEM background, seniority</td>
+        <td>Education r = .075***, Tenure r = −.044*** (experience ≠ method), STEM r = .009 n.s. (training ≠ method), Seniority r = −.042*** — all theoretically predicted directions</td>
+        <td class="badge">~</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="snav">
+    <span class="s">Motivation</span><span class="sep">·</span>
+    <span class="s">Construct</span><span class="sep">·</span>
+    <span class="s on">Validation</span><span class="sep">·</span>
+    <span class="s">Application</span><span class="sep">·</span>
+    <span class="s">Discussion</span>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     7 · VALIDATION: CRITERION 1 — CONTENT VALIDITY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section>
+  <div class="label">Validation · Criterion 1</div>
+  <h2>Items span the full SDM domain — verified by expert review with random condition assignment</h2>
+  <hr class="rule" />
+  <div class="two-col">
+    <div class="col">
+      <div class="steps">
+        <div class="step"><div class="step-n">·</div><div class="step-t">18 SDM researchers invited; 16 responded (88%)</div></div>
+        <div class="step"><div class="step-n">·</div><div class="step-t">Random assignment: 7 respond as "scientific manager," 9 as "opposite of scientific"</div></div>
+        <div class="step"><div class="step-n">·</div><div class="step-t">Elimination flags: &lt;75% correct pole identification; scientific mean &lt; 4; between-group difference &lt; 2</div></div>
+        <div class="step"><div class="step-n">·</div><div class="step-t"><strong>8 items eliminated;</strong> scale reduced from 7- to 5-point on expert recommendation</div></div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="stats" style="flex-direction:column; gap:.6em; margin-top:.3em">
+        <div class="stat"><div class="n">16</div><div class="lbl">expert researchers · 88% response rate</div></div>
+        <div class="stat alt"><div class="n">8</div><div class="lbl">items eliminated · 40 → 32 before Stage 3</div></div>
+      </div>
+      <div class="note" style="margin-top:.65em">ChatGPT pre-screen preceded this: items where the LLM failed to identify the scientific pole were flagged for revision. Efficiency step only — validity comes from the expert survey and the priming experiment.</div>
+    </div>
+  </div>
+  <div class="app-links">
+    <a class="app-link" onclick="navTo(22)">→ App A: Expert review protocol</a>
+  </div>
+  <div class="snav">
+    <span class="s">Motivation</span><span class="sep">·</span>
+    <span class="s">Construct</span><span class="sep">·</span>
+    <span class="s on">Validation</span><span class="sep">·</span>
+    <span class="s">Application</span><span class="sep">·</span>
+    <span class="s">Discussion</span>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     8 · VALIDATION: CRITERION 2 — NON-REDUNDANCY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section>
+  <div class="label">Validation · Criterion 2</div>
+  <h2>Each item contributes distinct information — no indicator is redundant</h2>
+  <hr class="rule" />
+  <div class="two-col">
+    <div class="col">
+      <p style="font-size:.70em; margin-bottom:.65em">Each indicator regressed on all 23 others. Redundant items inflate the weight of an arbitrarily sampled facet of the construct (Coltman et al., 2008).</p>
+      <div class="stats" style="flex-direction:column; gap:.55em">
+        <div class="stat">
+          <div class="n">1.03–1.19</div>
+          <div class="lbl">VIF range across all 24 items · conventional threshold &lt; 3</div>
+        </div>
+        <div class="stat alt">
+          <div class="n">.84–.97</div>
+          <div class="lbl">Tolerance values · minimum acceptable .20</div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="note" style="margin-top:.3em">Low inter-item correlations reflect good domain coverage — each item captures a distinct SDM practice. This is expected and appropriate for a formative instrument; it is not poor measurement.</div>
+    </div>
+  </div>
+  <div class="app-links">
+    <a class="app-link" onclick="navTo(24)">→ App C: VIF table (all 24 items)</a>
+  </div>
+  <div class="snav">
+    <span class="s">Motivation</span><span class="sep">·</span>
+    <span class="s">Construct</span><span class="sep">·</span>
+    <span class="s on">Validation</span><span class="sep">·</span>
+    <span class="s">Application</span><span class="sep">·</span>
+    <span class="s">Discussion</span>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     8 · VALIDATION: CRITERION 3 — EXPERIMENT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section>
+  <div class="label">Validation · Criterion 3</div>
+  <h2>The instrument detects causal change: d = 1.40 vs. placebo, d = 2.09 vs. intuitive</h2>
+  <hr class="rule" />
+  <div class="two-col">
+    <div class="col narrow">
+      <p style="font-size:.70em"><strong>N = 462 practicing managers</strong> across three subsamples (Prolific n=354; elite MBA alumni n=48; Italian firm managers n=60). Randomly assigned.</p>
+      <div class="steps" style="margin-top:.45em; gap:.05em">
+      </div>
+      <div class="stats" style="flex-direction:column; gap:.3em; margin-top:.6em">
+        <div class="stat fragment fade-up">
+          <div class="n">d = 1.40</div>
+          <div class="lbl">Scientific vs. Placebo &nbsp;·&nbsp; Δ = +0.511***</div>
+        </div>
+        <div class="stat dark fragment fade-up">
+          <div class="n">d = 2.09</div>
+          <div class="lbl">Scientific vs. Intuitive &nbsp;·&nbsp; Δ = +0.780***</div>
+        </div>
+      </div>
+      <p class="fragment fade-up" style="font-size:.60em; color:var(--muted); margin-top:.65em">
+        F(2, 459) = 175.21, p &lt; .001 &nbsp;·&nbsp; η² = .43 &nbsp;·&nbsp; Replicated across all three subsamples and all three subdimensions. Theorizing items show larger between-group differences than empirical assessment items, consistent with theorizing being the more discretionary component.
+      </p>
+    </div>
+    <div class="col wider">
+      <img src="figures/figure1_prime_violins.png" alt="Priming effects violin plot — SDM scores by experimental condition" />
+      <p style="font-size:.55em; color:var(--muted); text-align:center; margin-top:.4em">Figure 1. SDM scores by condition. Diamond = mean. N: Intuitive 139, Placebo 183, Scientific 140.</p>
+    </div>
+  </div>
+  <div class="app-links">
+    <a class="app-link" onclick="navTo(25)">→ App D: Experiment full results (item-level &amp; subsample tables)</a>
+  </div>
+  <div class="snav">
+    <span class="s">Motivation</span><span class="sep">·</span>
+    <span class="s">Construct</span><span class="sep">·</span>
+    <span class="s on">Validation</span><span class="sep">·</span>
+    <span class="s">Application</span><span class="sep">·</span>
+    <span class="s">Discussion</span>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     9 · VALIDATION: CRITERIA 4 & 5
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section>
+  <div class="label">Validation · Criteria 4 &amp; 5</div>
+  <h2>Three dimensions are statistically distinct and SDM predicts decision quality</h2>
+  <hr class="rule" />
+  <div class="two-col">
+    <div class="col">
+      <p style="font-size:.70em; font-weight:600; color:var(--navy); margin-bottom:.4em">4 · Structural distinguishability</p>
+      <div class="steps">
+        <div class="step"><div class="step-n">·</div><div class="step-t"><em>Why run CFA at all?</em> EE and AL correlate highly (<em>r</em> = .95) — a natural question is whether they should be one dimension. We used CFA as a <strong>specification test</strong> to answer it: not to assess fit (which is expected to be poor for formative constructs), but to ask whether 3 factors are statistically distinguishable from 2.</div></div>
+        <div class="step"><div class="step-n">·</div><div class="step-t">Conceptually, they are non-interchangeable: a manager can evaluate evidence rigorously and still not update prior beliefs — motivated reasoning and escalation of commitment each illustrate this.</div></div>
+        <div class="step"><div class="step-n">·</div><div class="step-t">Statistically confirmed: constrained model (EE–AL fixed to 1) fits significantly worse — Δχ² = 131.86, Δdf = 1, <em>p</em> &lt; .001.</div></div>
+      </div>
+    </div>
+    <div class="col fragment fade-up">
+      <p style="font-size:.70em; font-weight:600; color:var(--navy); margin-bottom:.4em">5 · Behavioral prediction (vignette accuracy)</p>
+      <div class="steps">
+        <div class="step"><div class="step-n">·</div><div class="step-t">β = .12, <em>p</em> &lt; .001 — stable across all 4 specifications (range .117–.122). Not confounded by tier, education, tenure, or decision area.</div></div>
+        <div class="step"><div class="step-n">·</div><div class="step-t"><strong>Top quintile</strong> (SDM ≥ 3.47): <strong>54.7%</strong> correct &nbsp;·&nbsp; <strong>Bottom quintile</strong> (SDM ≤ 2.96): <strong>44.3%</strong> correct</div></div>
+      </div>
+      <div class="note" style="margin-top:.5em; font-size:.62em"><strong>Qualification:</strong> SDM and vignettes developed by the same team — circularity mitigated but not eliminable from the published record. Priming experiment (d = 2.09, independent sample) is the primary validity evidence.</div>
+    </div>
+  </div>
+  <div class="app-links">
+    <a class="app-link" onclick="navTo(23)">→ App B: Full CFA specifications &amp; fit indices</a>
+  </div>
+  <div class="snav">
+    <span class="s">Motivation</span><span class="sep">·</span>
+    <span class="s">Construct</span><span class="sep">·</span>
+    <span class="s on">Validation</span><span class="sep">·</span>
+    <span class="s">Application</span><span class="sep">·</span>
+    <span class="s">Discussion</span>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     10 · VALIDATION: CRITERION 6 — CONVERGENT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section>
+  <div class="label">Validation · Criterion 6</div>
+  <h2>SDM correlates with likely predictors in theoretically predicted directions</h2>
+  <hr class="rule" />
+  <div class="two-col">
+    <div class="col">
+      <div class="stats" style="flex-direction:column; gap:.6em; margin-top:.3em">
+        <div class="stat fragment fade-up"><div class="n">r = .075***</div><div class="lbl">Education → SDM · modest positive, as theorized</div></div>
+        <div class="stat alt fragment fade-up"><div class="n">r = .009 n.s.</div><div class="lbl">STEM background → SDM · near-zero — domain knowledge ≠ reasoning method</div></div>
+        <div class="stat dark fragment fade-up"><div class="n">r = −.044***</div><div class="lbl">Tenure → SDM · negative — experience ≠ method</div></div>
+      </div>
+    </div>
+    <div class="col fragment fade-up">
+      <div class="steps">
+        <div class="step"><div class="step-n">·</div><div class="step-t">STEM near-zero is the <em>theoretically correct</em> result: scientific knowledge does not transfer into scientific reasoning orientation (Camuffo et al., 2020; Kahan et al., 2012).</div></div>
+        <div class="step"><div class="step-n">·</div><div class="step-t">Tenure negative is consistent with cognitive entrenchment (Dane, 2010) and the expert judgment literature — experience deepens domain knowledge while leaving reasoning deficiencies intact.</div></div>
+        <div class="step"><div class="step-n">·</div><div class="step-t"><em>Partial picture:</em> AOT and NFC were not administered in the deployment study. Full convergent validity requires a dedicated subsample study.</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="app-links">
+    <a class="app-link" onclick="navTo(28)">→ App G: SDM correlates table (education, tenure, STEM, tier)</a>
+  </div>
+  <div class="snav">
+    <span class="s">Motivation</span><span class="sep">·</span>
+    <span class="s">Construct</span><span class="sep">·</span>
+    <span class="s on">Validation</span><span class="sep">·</span>
+    <span class="s">Application</span><span class="sep">·</span>
+    <span class="s">Discussion</span>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     11 · FIELD DEPLOYMENT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section>
+  <div class="label">Application</div>
+  <h2>We deployed the instrument to 9,458 managers across 61 firms in five hierarchical tiers</h2>
+  <hr class="rule" />
+  <p style="font-size:.74em; color:var(--muted)">Cross-sectional survey · Frontline (T5) to CEO/Top Management (T1) · three questions: Where does SDM variance live? Does it follow the hierarchy? Does it predict decisions?</p>
+  <div class="big-stats fragment fade-up" style="margin-top:1.8em">
+    <div class="bstat" style="padding:2em 1.2em">
+      <div class="bn" style="font-size:3.4em">9,458</div>
+      <div class="bl" style="font-size:.70em; margin-top:.5em">managers surveyed</div>
+    </div>
+    <div class="bstat" style="padding:2em 1.2em">
+      <div class="bn" style="font-size:3.4em">61</div>
+      <div class="bl" style="font-size:.70em; margin-top:.5em">firms across industries</div>
+    </div>
+    <div class="bstat" style="padding:2em 1.2em">
+      <div class="bn" style="font-size:3.4em">5</div>
+      <div class="bl" style="font-size:.70em; margin-top:.5em">hierarchical tiers<br>Frontline → CEO</div>
+    </div>
+    <div class="bstat" style="padding:2em 1.2em">
+      <div class="bn" style="font-size:3.4em">3.21</div>
+      <div class="bl" style="font-size:.70em; margin-top:.5em">mean SDM overall<br>(scale 1–5; SD = .29)</div>
+    </div>
+  </div>
+  <div class="note fragment fade-up" style="margin-top:1.4em; font-size:.65em">Sample self-selection caveat: participating organizations opted into the SDM Project. Firms that elect to participate may be more analytically oriented than the general population, potentially compressing the lower tail of the SDM distribution and attenuating between-firm variance.</div>
+  <div class="snav">
+    <span class="s">Motivation</span><span class="sep">·</span>
+    <span class="s">Construct</span><span class="sep">·</span>
+    <span class="s">Validation</span><span class="sep">·</span>
+    <span class="s on">Application</span><span class="sep">·</span>
+    <span class="s">Discussion</span>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     11 · ICC — LEVEL OF ANALYSIS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section>
+  <div class="label">Application · Pattern 1</div>
+  <h2>SDM is an individual-level construct</h2>
+  <hr class="rule" />
+  <p style="font-size:.74em; color:var(--muted)">Before asking <em>how</em> SDM varies across organizational levels, we ask <em>where</em> the variance lives — in individuals, or in firms? REML random intercept models decompose total SDM variance into between-firm and within-firm components. Between-firm ICC values are well below the 5% threshold. Vertical line = threshold.</p>
+  <div class="icc-bars fragment fade-up" style="gap:1.3em; margin-top:1.2em">
+    <div class="icc-row">
+      <div class="icc-dim" style="font-size:.72em">SDM Overall</div>
+      <div class="icc-track" style="height:22px"><div class="icc-fill" style="width:1.1%"></div><div class="icc-thresh"></div></div>
+      <div class="icc-pct" style="font-size:.70em">1.1%</div>
+    </div>
+    <div class="icc-row">
+      <div class="icc-dim" style="font-size:.72em">Causal Reasoning</div>
+      <div class="icc-track" style="height:22px"><div class="icc-fill" style="width:0.7%"></div><div class="icc-thresh"></div></div>
+      <div class="icc-pct" style="font-size:.70em">0.7%</div>
+    </div>
+    <div class="icc-row">
+      <div class="icc-dim" style="font-size:.72em">Evidence Evaluation</div>
+      <div class="icc-track" style="height:22px"><div class="icc-fill" style="width:2%"></div><div class="icc-thresh"></div></div>
+      <div class="icc-pct" style="font-size:.70em">2.0%</div>
+    </div>
+    <div class="icc-row">
+      <div class="icc-dim" style="font-size:.72em">Adaptive Learning</div>
+      <div class="icc-track" style="height:22px"><div class="icc-fill" style="width:0.7%"></div><div class="icc-thresh"></div></div>
+      <div class="icc-pct" style="font-size:.70em">0.7%</div>
+    </div>
+  </div>
+  <p class="fragment fade-up" style="font-size:.63em; color:var(--muted); margin-top:1em">Robust across ANOVA, REML, and conditional REML. LOFO: 61 leave-one-firm-out iterations; max |ΔICC| = .003.</p>
+  <div class="finding-box fragment fade-up">
+    <div class="fb-label">Interpretation</div>
+    <div class="fb-text">Firms do not impose a sufficiently uniform reasoning environment to make their managers more similar to each other than to managers in other firms. The within-firm variance that does exist is <strong>not random</strong> — it follows the organizational hierarchy.</div>
+  </div>
+  <div class="app-links">
+    <a class="app-link" onclick="navTo(26)">→ App E: ICC robustness (ANOVA / REML / LOFO / bootstrap)</a>
+  </div>
+  <div class="snav">
+    <span class="s">Motivation</span><span class="sep">·</span>
+    <span class="s">Construct</span><span class="sep">·</span>
+    <span class="s">Validation</span><span class="sep">·</span>
+    <span class="s on">Application</span><span class="sep">·</span>
+    <span class="s">Discussion</span>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     12 · FINDING 2 — HIERARCHY GRADIENT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section>
+  <div class="label">Application · Pattern 2</div>
+  <h2>SDM follows the organizational hierarchy</h2>
+  <hr class="rule" />
+  <p style="font-size:.74em; color:var(--muted)">The within-firm variance is not random — it follows the organizational hierarchy. OLS regressions of SDM on hierarchical tier (reference: T5 Frontline), with and without firm fixed effects.</p>
+  <div class="two-col">
+    <div class="col wider">
+      <img src="figures/hierarchical_sdm_wow_figure.png" alt="OLS coefficient scores by hierarchical tier and subdimension" style="max-height:48vh" />
+      <p style="font-size:.54em; color:var(--muted); text-align:center; margin-top:.4em">Figure 2. OLS coefficients vs. Frontline (T5 reference). Even columns include firm fixed effects.</p>
+    </div>
+    <div class="col narrow">
+      <div class="steps">
+        <div class="step fragment fade-up">
+          <div class="step-n">→</div>
+          <div class="step-t">CEO/Top (T1) score <strong>b = .07, p &lt; .001</strong> higher than Frontline on overall SDM.</div>
+        </div>
+        <div class="step fragment fade-up">
+          <div class="step-n">→</div>
+          <div class="step-t">Gradient is <strong>monotonic</strong> across all five tiers for overall SDM and Causal Reasoning.</div>
+        </div>
+        <div class="step fragment fade-up">
+          <div class="step-n">→</div>
+          <div class="step-t">Pattern <strong>survives firm fixed effects</strong> — not a composition artifact.</div>
+        </div>
+        <div class="step fragment fade-up">
+          <div class="step-n">→</div>
+          <div class="step-t">Robust to education, tenure, and decision area controls across all four panels (Table 7).</div>
+        </div>
+      </div>
+      <div class="note fragment fade-up">This paper documents the gradient; it does not explain it. That requires a different design and is deferred to future work.</div>
+    </div>
+  </div>
+  <div class="app-links">
+    <a class="app-link" onclick="navTo(27)">→ App F: Full hierarchy regressions (Table 7, all 4 panels)</a>
+  </div>
+  <div class="snav">
+    <span class="s">Motivation</span><span class="sep">·</span>
+    <span class="s">Construct</span><span class="sep">·</span>
+    <span class="s">Validation</span><span class="sep">·</span>
+    <span class="s on">Application</span><span class="sep">·</span>
+    <span class="s">Discussion</span>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     13 · FINDING 2b — DIMENSIONAL ASYMMETRY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section>
+  <div class="label">Application · Pattern 2 (continued)</div>
+  <h2>Adaptive Learning drives the hierarchy gradient; Evidence Evaluation does not</h2>
+  <hr class="rule" />
+  <p style="font-size:.74em; color:var(--muted)">Hierarchy shapes <em>how</em> managers reason — not <em>whether</em> they seek evidence.</p>
+  <div class="delta-compare fragment fade-up" style="margin-top:1.4em">
+    <div class="delta" style="padding:1.4em 1.3em">
+      <div class="delta-lbl">Adaptive Learning</div>
+      <div class="delta-n" style="font-size:2.8em">Δ = .19</div>
+      <div class="delta-sub" style="font-size:.65em; margin-top:.4em">CEO (T1) vs. Frontline (T5) gap &nbsp;·&nbsp; b = .19, p &lt; .001 &nbsp;·&nbsp; monotonic across all tiers</div>
+    </div>
+    <div class="delta" style="padding:1.4em 1.3em">
+      <div class="delta-lbl">Causal Reasoning</div>
+      <div class="delta-n" style="font-size:2.8em">Δ = .07</div>
+      <div class="delta-sub" style="font-size:.65em; margin-top:.4em">CEO vs. Frontline gap &nbsp;·&nbsp; b = .07, p &lt; .001 &nbsp;·&nbsp; clean gradient</div>
+    </div>
+    <div class="delta minor" style="padding:1.4em 1.3em">
+      <div class="delta-lbl">Evidence Evaluation</div>
+      <div class="delta-n" style="font-size:2.8em">Δ = .04</div>
+      <div class="delta-sub" style="font-size:.65em; margin-top:.4em">CEO vs. Frontline gap &nbsp;·&nbsp; n.s. at all tiers &nbsp;·&nbsp; tier does not differentiate EE</div>
+    </div>
+  </div>
+  <div class="steps" style="margin-top:1.4em">
+    <div class="step fragment fade-up">
+      <div class="step-n">→</div>
+      <div class="step-t">AL gradient exceeds EE gradient by .15 scale points (SE = .04, p &lt; .001). This dissociation is <strong>also validation evidence</strong>: two identical dispositions would produce statistically indistinguishable tier gradients. They do not.</div>
+    </div>
+    <div class="step fragment fade-up">
+      <div class="step-n">→</div>
+      <div class="step-t" style="color:var(--muted); font-style:italic">The AL > EE gradient is consistent with AL being more responsive to repeated decision cycles — senior managers have faced more rounds of evidence, surprise, and revision. EE may be a more stable cognitive disposition. We document the pattern; the mechanism is an open question.</div>
+    </div>
+  </div>
+  <div class="snav">
+    <span class="s">Motivation</span><span class="sep">·</span>
+    <span class="s">Construct</span><span class="sep">·</span>
+    <span class="s">Validation</span><span class="sep">·</span>
+    <span class="s on">Application</span><span class="sep">·</span>
+    <span class="s">Discussion</span>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     14 · APPLICATION: PATTERN 3 — FIRM-LEVEL OLS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section>
+  <div class="label">Application · Pattern 3</div>
+  <h2>Firm mean SDM predicts collective decision accuracy — exploratory</h2>
+  <hr class="rule" />
+  <p style="font-size:.74em; color:var(--muted)">Does the hierarchy gradient translate into outcomes? Firm-level OLS, N = 57 firms with ≥ 5 vignette respondents. Outcome: firm mean vignette accuracy.</p>
+  <div class="two-col">
+    <div class="col">
+      <div class="stats" style="flex-direction:column; gap:.6em; margin-top:.3em">
+        <div class="stat fragment fade-up">
+          <div class="n">b = .28</div>
+          <div class="lbl">firm mean SDM → collective vignette accuracy · p = .013 · R² = .107</div>
+        </div>
+        <div class="stat alt fragment fade-up">
+          <div class="n">N = 57</div>
+          <div class="lbl">firms with ≥ 5 vignette respondents · unit of analysis: firm</div>
+        </div>
+        <div class="stat dark fragment fade-up">
+          <div class="n">n.s.</div>
+          <div class="lbl">SDM dispersion (within-firm SD) — does not predict collective accuracy independently</div>
+        </div>
+      </div>
+    </div>
+    <div class="col fragment fade-up">
+      <div class="steps">
+        <div class="step"><div class="step-n">·</div><div class="step-t">Firms where managers reason more scientifically on average also decide more accurately collectively — level matters, not homogeneity.</div></div>
+        <div class="step"><div class="step-n">·</div><div class="step-t">Dispersion n.s. — what drives collective accuracy is the average level of SDM, not how heterogeneous it is within the firm.</div></div>
+        <div class="step"><div class="step-n">·</div><div class="step-t" style="color:var(--muted); font-style:italic">Caveat: N = 57 firms is underpowered for firm-level inference. Reported in the main paper as an exploratory result — not a primary claim.</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="app-links">
+    <a class="app-link" onclick="navTo(29)">→ App H: Firm-level OLS full table (Table 9)</a>
+  </div>
+  <div class="snav">
+    <span class="s">Motivation</span><span class="sep">·</span>
+    <span class="s">Construct</span><span class="sep">·</span>
+    <span class="s">Validation</span><span class="sep">·</span>
+    <span class="s on">Application</span><span class="sep">·</span>
+    <span class="s">Discussion</span>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     15 · FINDING 4 — INDIVIDUAL DECISION QUALITY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section>
+  <div class="label">Application · Pattern 4</div>
+  <h2>At the individual level: higher SDM predicts better decisions</h2>
+  <hr class="rule" />
+  <div class="two-col">
+    <div class="col narrow">
+      <p style="font-size:.70em; color:var(--muted)">Vignette task: 6 decision scenarios with objectively scorable answers administered to N = 9,458 managers. Score = proportion correct.</p>
+      <div class="stats" style="flex-direction:column; gap:.5em; margin-top:.7em">
+        <div class="stat fragment fade-up">
+          <div class="n">54.7%</div>
+          <div class="lbl">correct · top SDM quintile (SDM ≥ 3.47) · n = 1,639</div>
+        </div>
+        <div class="stat dark fragment fade-up">
+          <div class="n">44.3%</div>
+          <div class="lbl">correct · bottom SDM quintile (SDM ≤ 2.96) · n = 1,911</div>
+        </div>
+      </div>
+      <p class="fragment fade-up" style="font-size:.60em; color:var(--muted); margin-top:.65em; border-top:1px solid var(--rule); padding-top:.5em">β = .12, p &lt; .001 · Stable across 4 specs (.117–.122). Not confounded by tier, education, tenure, or decision area.</p>
+      <div class="note fragment fade-up" style="font-size:.62em">r² ≈ 3% is modest but expected — vignette accuracy is multi-determined. SDM is one input, not the sole driver.</div>
+    </div>
+    <div class="col wider">
+      <img src="figures/sdm_quintile_vignette.png" alt="Vignette accuracy by SDM quintile" style="max-height:52vh" />
+      <p style="font-size:.54em; color:var(--muted); text-align:center; margin-top:.3em">Figure 3. Vignette accuracy by SDM quintile. Error bars = 95% CI.</p>
+    </div>
+  </div>
+  <div class="app-links">
+    <a class="app-link" onclick="navTo(28)">→ App G: SDM correlates table (education, tenure, STEM, tier)</a>
+  </div>
+  <div class="snav">
+    <span class="s">Motivation</span><span class="sep">·</span>
+    <span class="s">Construct</span><span class="sep">·</span>
+    <span class="s">Validation</span><span class="sep">·</span>
+    <span class="s on">Application</span><span class="sep">·</span>
+    <span class="s">Discussion</span>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     16 · CONTRIBUTIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section>
+  <div class="label">Discussion</div>
+  <h2>SDM shifts from an experimentally induced treatment to an observable characteristic</h2>
+  <hr class="rule" />
+  <div class="contrib-grid">
+    <div class="contrib fragment fade-up">
+      <div class="contrib-num">C1</div>
+      <div class="contrib-title">First validated instrument for SDM at field scale</div>
+      <ul>
+        <li>24 items · formative · 3 dimensions · grounded in 6-step theoretical framework</li>
+        <li>Validated across 5 complementary criteria — no single statistic establishes validity</li>
+        <li>Experimental, observational, and behavioral evidence converge</li>
+        <li>Scientific reasoning is now observable and comparable across managers and firms</li>
+        <li>Validation template for process-based formative constructs</li>
+      </ul>
+    </div>
+    <div class="contrib c2 fragment fade-up">
+      <div class="contrib-num">C2</div>
+      <div class="contrib-title">Three empirical patterns on SDM distribution in organizations</div>
+      <ul>
+        <li>SDM is individual-level (ICC &lt; 2% between firms; robust across 61 LOFO iterations)</li>
+        <li>Hierarchy shapes <em>how</em> managers reason, not <em>whether</em> they seek evidence (AL differentiates tiers; EE does not)</li>
+        <li>Higher SDM → better individual decision quality (12 pp gap, top vs. bottom quintile)</li>
+        <li>Firm mean SDM predicts collective vignette accuracy (b = .28, p = .013; exploratory, N = 57 firms, in main paper)</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout fragment fade-up">
+    <div class="callout-title">The instrument shifts the central question from whether SDM improves outcomes to when, why, and for whom it does so.</div>
+  </div>
+  <div class="app-links">
+    <a class="app-link" onclick="navTo(29)">→ Table 9: Firm-level OLS (N = 57, exploratory, main paper)</a>
+  </div>
+  <div class="snav">
+    <span class="s">Motivation</span><span class="sep">·</span>
+    <span class="s">Construct</span><span class="sep">·</span>
+    <span class="s">Validation</span><span class="sep">·</span>
+    <span class="s">Application</span><span class="sep">·</span>
+    <span class="s on">Discussion</span>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     16 · LIMITATIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section>
+  <div class="label">Discussion · Limitations</div>
+  <h2>What the evidence does not yet establish</h2>
+  <hr class="rule" />
+  <div class="qs">
+    <div class="q">
+      <div class="q-tag" style="color:var(--terra)">Criterion</div>
+      <div class="q-body">
+        <strong>Same-team design</strong> — SDM scale and vignettes built by the same team. Circularity mitigated but not eliminable. External criterion validation is the priority next step.
+      </div>
+    </div>
+    <div class="q">
+      <div class="q-tag" style="color:var(--terra)">Convergent</div>
+      <div class="q-body">
+        <strong>AOT and NFC not administered</strong> — the two closest established constructs (Actively Open-minded Thinking; Need for Cognition) were not collected in the deployment study. Proxies are consistent with theory but do not substitute. <a class="app-link" style="vertical-align:middle" onclick="navTo(30)">→ App I: proposed fix</a>
+      </div>
+    </div>
+    <div class="q amber">
+      <div class="q-tag">Design</div>
+      <div class="q-body">
+        <strong>Cross-sectional</strong> — cannot establish whether SDM predicts outcomes over time or whether the hierarchy gradient reflects selection, socialization, or experience.
+      </div>
+    </div>
+    <div class="q amber">
+      <div class="q-tag">Sample</div>
+      <div class="q-body">
+        <strong>Self-selected firms</strong> — organizations opted in; may compress the lower tail of the SDM distribution and attenuate between-firm variance.
+      </div>
+    </div>
+  </div>
+  <div class="snav">
+    <span class="s">Motivation</span><span class="sep">·</span>
+    <span class="s">Construct</span><span class="sep">·</span>
+    <span class="s">Validation</span><span class="sep">·</span>
+    <span class="s">Application</span><span class="sep">·</span>
+    <span class="s on">Discussion</span>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     17 · OPEN QUESTIONS FOR DISCUSSION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section>
+  <div class="label">Discussion · Your input needed</div>
+  <h2>Active decisions — we want your instinct</h2>
+  <hr class="rule" />
+  <div class="qs">
+    <div class="q fragment fade-up">
+      <div class="q-tag" style="color:var(--terra)">Unresolved</div>
+      <div class="q-body">
+        <strong>Collect AOT + NFC before submission — or name as future work?</strong>
+        The two closest adjacent constructs were not in the deployment study. A reviewer will flag this. Proposed fix: short Prolific follow-up (~250 managers, AOT-7 + NFC-6, 2 weeks). Close the gap now, or acknowledge and commit to a follow-up paper?
+      </div>
+    </div>
+    <div class="q fragment fade-up">
+      <div class="q-tag" style="color:var(--terra)">Unresolved</div>
+      <div class="q-body">
+        <strong>Firm-level OLS (N = 57) — main paper or appendix?</strong>
+        b = .28, p = .013, but N = 57 is underpowered for firm-level inference. Keep in the body as exploratory, or move to appendix to avoid overreach?
+      </div>
+    </div>
+    <div class="q amber fragment fade-up">
+      <div class="q-tag">Feedback</div>
+      <div class="q-body">
+        <strong>ORM or SMJ?</strong>
+        ORM: instrument is the contribution; patterns demonstrate it. SMJ: hierarchy + performance are the contribution; instrument is the means. Different framing, different theory section. What's your instinct?
+      </div>
+    </div>
+    <div class="q amber fragment fade-up">
+      <div class="q-tag">Feedback</div>
+      <div class="q-body">
+        <strong>Hierarchy gradient — leave the mechanism open?</strong>
+        We document but do not explain the AL > EE gradient (different design required). Does this read as scope discipline — or as a gap that weakens the theoretical contribution?
+      </div>
+    </div>
+  </div>
+  <div class="snav">
+    <span class="s">Motivation</span><span class="sep">·</span>
+    <span class="s">Construct</span><span class="sep">·</span>
+    <span class="s">Validation</span><span class="sep">·</span>
+    <span class="s">Application</span><span class="sep">·</span>
+    <span class="s on">Discussion</span>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     18 · APPENDIX
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section>
+  <div class="label">Reference</div>
+  <h2>Backup slides available on request</h2>
+  <hr class="rule" />
+  <p style="font-size:.66em; color:var(--muted)">Ask me for any of these during Q&amp;A.</p>
+  <p style="font-size:.60em; color:var(--muted); margin-bottom:.5em">Paper appendices A–E · supplementary backup slides below</p>
+  <div class="app-grid">
+    <div class="app-item" onclick="navTo(22)">
+      <div class="app-id">A</div>
+      <div class="app-text"><strong>Survey Instrument (App A)</strong>Item list · expert review protocol (§A.3) · elimination criteria · Tables A1–A3</div>
+    </div>
+    <div class="app-item" onclick="navTo(23)">
+      <div class="app-id">B</div>
+      <div class="app-text"><strong>Psychometric Details (App B)</strong>CFA specifications · fit indices · interfactor correlations · Tables B.1–B.5</div>
+    </div>
+    <div class="app-item" onclick="navTo(25)">
+      <div class="app-id">C</div>
+      <div class="app-text"><strong>Experimental Priming (App C)</strong>Results by subsample · by SDM component · item-level effects · prime texts · Tables C.1–C.4</div>
+    </div>
+    <div class="app-item" onclick="navTo(26)">
+      <div class="app-id">D</div>
+      <div class="app-text"><strong>ICC Robustness (App D)</strong>ANOVA / REML / Conditional REML · LOFO sensitivity · bootstrap CIs · Tables D1.1–D1.4</div>
+    </div>
+    <div class="app-item" onclick="navTo(29)">
+      <div class="app-id">E</div>
+      <div class="app-text"><strong>Organizational Analyses (App E)</strong>Firm-level OLS · mean SDM → collective accuracy · descriptive statistics · Table E.1</div>
+    </div>
+    <div class="app-item" onclick="navTo(24)" style="opacity:.75">
+      <div class="app-id" style="background:var(--navy2)">—</div>
+      <div class="app-text"><strong>VIF — indicator non-redundancy</strong>All 24 items · tolerance values · <em>Main paper, Table 3</em></div>
+    </div>
+    <div class="app-item" onclick="navTo(27)" style="opacity:.75">
+      <div class="app-id" style="background:var(--navy2)">—</div>
+      <div class="app-text"><strong>Hierarchy OLS — full table</strong>4 outcomes × 5 tiers · firm FE · <em>Main paper, §5</em></div>
+    </div>
+    <div class="app-item" onclick="navTo(28)" style="opacity:.75">
+      <div class="app-id" style="background:var(--navy2)">—</div>
+      <div class="app-text"><strong>SDM correlates (partial convergent)</strong>Education · tenure · STEM · vignette · tier · <em>Main paper, §4–5</em></div>
+    </div>
+    <div class="app-item" onclick="navTo(30)" style="opacity:.75">
+      <div class="app-id" style="background:var(--navy2)">—</div>
+      <div class="app-text"><strong>AOT + NFC plan</strong>Proposed subsample design · expected correlations · <em>Future work</em></div>
+    </div>
+  </div>
+  <div class="snav">
+    <span class="s">Motivation</span><span class="sep">·</span>
+    <span class="s">Construct</span><span class="sep">·</span>
+    <span class="s">Validation</span><span class="sep">·</span>
+    <span class="s">Application</span><span class="sep">·</span>
+    <span class="s on">Discussion</span>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     19 · THANK YOU
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section class="ty-sl">
+  <div class="ty-stripe"></div>
+  <div class="ty-body">
+    <div class="t-eyebrow-ty">Work in Progress · March 2026</div>
+    <div class="ty-h">Thank you.</div>
+    <div class="ty-sub">Every objection, question, and suggestion will make this better.</div>
+    <div class="ty-meta">
+      <strong>Helena Montoya</strong><br>
+      [email] &nbsp;·&nbsp; Management Department, Bocconi University<br><br>
+      <span style="color:var(--rule)">Appendix on request · Slides at [link]</span>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     APP A · EXPERT REVIEW (index 19)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section>
+  <a class="app-back" onclick="navBack()">← back</a>
+  <div class="app-sl-label">Appendix A · §A.3 — Content Validity</div>
+  <h2>Expert review — content validity protocol</h2>
+  <hr class="rule" />
+  <p style="font-size:.68em">Conducted April 2023. 18 SDM researchers invited; 16 responded (88%). Randomly assigned: 7 respond as "scientific manager," 9 as "opposite of a scientific manager." Item-by-item feedback elicited after survey completion.</p>
+  <table class="app-table" style="margin-top:.7em">
+    <thead><tr><th>Elimination flag</th><th>Threshold</th><th>Rationale</th></tr></thead>
+    <tbody>
+      <tr><td>Non-response</td><td>&gt; 20% missing</td><td>Item clarity concern</td></tr>
+      <tr><td>Pole identification</td><td>&lt; 75% correct pole</td><td>Ambiguous behavioral anchor</td></tr>
+      <tr><td>Scientific-group mean</td><td>&lt; 4.0 (7-pt scale)</td><td>Item fails to elicit scientific response</td></tr>
+      <tr><td>Opposite-group mean</td><td>&gt; 4.0 (7-pt scale)</td><td>Scientific framing bleeds into opposite condition</td></tr>
+      <tr><td>Between-group difference</td><td>&lt; 2.0 scale points</td><td>Poor discriminant sensitivity</td></tr>
+      <tr><td>Reversed direction</td><td>Any reversal</td><td>Fundamental construct validity failure</td></tr>
+    </tbody>
+  </table>
+  <div class="stats" style="margin-top:.8em">
+    <div class="stat"><div class="n">8</div><div class="lbl">items eliminated (redundancy, poor differentiation, or persistent confusion)</div></div>
+    <div class="stat alt"><div class="n">7-pt → 5-pt</div><div class="lbl">scale reduced on expert recommendation to reduce cognitive burden</div></div>
+    <div class="stat dark"><div class="n">40 → 32</div><div class="lbl">items after Stage 2; further reduced in Stage 3</div></div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     APP B · CFA SPECIFICATIONS (index 20)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section>
+  <a class="app-back" onclick="navBack()">← back</a>
+  <div class="app-sl-label">Appendix B — Psychometric Details · Tables B.1–B.5</div>
+  <h2>CFA specification tests — structural distinguishability</h2>
+  <hr class="rule" />
+  <p style="font-size:.67em">Poor CFA fit is <em>diagnostic</em> for formative constructs (indicators cause the construct; they are not expected to covary). The purpose of CFA here is not model fit but to test whether three factors are statistically distinct from two.</p>
+  <table class="app-table">
+    <thead><tr><th>Specification</th><th>CFI</th><th>RMSEA</th><th>Interpretation</th></tr></thead>
+    <tbody>
+      <tr><td>1-factor (all items)</td><td class="hi">&lt; .50</td><td class="hi">high</td><td>Confirms indicators are not interchangeable reflections of one latent trait</td></tr>
+      <tr><td>3-factor, reflective</td><td class="hi">&lt; .50</td><td class="hi">high</td><td>Expected — formative specification misfit under reflective CFA</td></tr>
+      <tr><td>3-factor correlated (main)</td><td class="hi">&lt; .50</td><td class="hi">high</td><td>Note: CR × EE interfactor = −.88 (Heywood artifact); composite correlations all positive (Table B5)</td></tr>
+      <tr><td>2-factor (EE + AL merged)</td><td class="hi">&lt; .50</td><td class="hi">high</td><td>Δχ² vs. 3-factor = <strong>131.86</strong>, Δdf = 1, <em>p</em> &lt; .001 — EE and AL are statistically distinct</td></tr>
+    </tbody>
+  </table>
+  <div class="finding-box" style="margin-top:.75em">
+    <div class="fb-label">Key result</div>
+    <div class="fb-text">Despite high composite-score correlation between EE and AL (r = .95), the 3-factor model fits significantly better than the 2-factor model (Δχ² = 131.86, p &lt; .001). The three dimensions are statistically distinguishable. Poor CFI does not undermine this conclusion — it confirms the formative specification.</div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     APP C · VIF TABLE (index 21)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section>
+  <a class="app-back" onclick="navBack()">← back</a>
+  <div class="app-sl-label">Main paper · Table 3 — Indicator Non-Redundancy</div>
+  <h2>Indicator non-redundancy — VIF for all 24 items</h2>
+  <hr class="rule" />
+  <p style="font-size:.68em">Each item regressed on the remaining 23. Redundant indicators inflate the weight of an arbitrarily sampled facet of the construct (Coltman et al., 2008). Conventional threshold: VIF &lt; 3; conservative: VIF &lt; 5.</p>
+  <div class="two-col" style="margin-top:.7em">
+    <div class="col">
+      <table class="app-table">
+        <thead><tr><th>Dimension</th><th>Items</th><th>VIF range</th><th>Tolerance range</th></tr></thead>
+        <tbody>
+          <tr><td>Causal Reasoning</td><td>11</td><td class="lo">1.03–1.17</td><td>0.86–0.97</td></tr>
+          <tr><td>Evidence Evaluation</td><td>9</td><td class="lo">1.04–1.19</td><td>0.84–0.96</td></tr>
+          <tr><td>Adaptive Learning</td><td>4</td><td class="lo">1.04–1.14</td><td>0.88–0.96</td></tr>
+          <tr><td><strong>All 24 items</strong></td><td>24</td><td class="lo"><strong>1.03–1.19</strong></td><td><strong>0.84–0.97</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col">
+      <div class="stats" style="flex-direction:column; gap:.5em">
+        <div class="stat alt"><div class="n">1.03–1.19</div><div class="lbl">VIF range across all 24 items · well below threshold of 3</div></div>
+        <div class="stat"><div class="n">.84–.97</div><div class="lbl">Tolerance values · minimum acceptable threshold is .20</div></div>
+      </div>
+      <div class="note" style="margin-top:.65em">Low inter-item correlations reflect good domain coverage — each item contributes distinct information about the SDM construct. This is expected and appropriate for a formative instrument.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     APP D · EXPERIMENT FULL RESULTS (index 22)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section>
+  <a class="app-back" onclick="navBack()">← back</a>
+  <div class="app-sl-label">Appendix C — Experimental Priming · Tables C.1–C.4</div>
+  <h2>Nudge experiment — full results by subsample</h2>
+  <hr class="rule" />
+  <table class="app-table">
+    <thead><tr><th>Subsample</th><th>N</th><th>Mean Sci</th><th>Mean Placebo</th><th>Mean Int</th><th>Sci β (vs. Plc)</th><th>Int β (vs. Plc)</th></tr></thead>
+    <tbody>
+      <tr><td>Prolific (online)</td><td>354</td><td>3.599</td><td>3.010</td><td>2.778</td><td class="hi">+0.589***</td><td>−0.232***</td></tr>
+      <tr><td>Italian firm managers</td><td>60</td><td>3.471</td><td>3.173</td><td>2.966</td><td class="hi">+0.299* (p=.017)</td><td class="dim">−0.207 (p=.064, n.s.)</td></tr>
+      <tr><td>MBA alumni</td><td>48</td><td class="dim">—</td><td>3.160</td><td class="dim">—</td><td class="dim" colspan="2">Placebo condition only — no treatment variation</td></tr>
+    </tbody>
+  </table>
+  <div class="stats" style="margin-top:.75em">
+    <div class="stat"><div class="n">d = 1.40</div><div class="lbl">Scientific vs. Placebo · large effect</div></div>
+    <div class="stat dark"><div class="n">d = 2.09</div><div class="lbl">Scientific vs. Intuitive · very large effect</div></div>
+    <div class="stat alt"><div class="n">η² = .43</div><div class="lbl">F(2,459) = 175.21, p &lt; .001</div></div>
+  </div>
+  <div class="note" style="margin-top:.65em">OLS with HC3 robust SE. Reference condition is Placebo. *** p &lt; .001, * p &lt; .05. Italian intuitive contrast borderline (p = .064, n.s.). MBA alumni had no treatment variation; means reported for completeness.</div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     APP E · ICC ROBUSTNESS (index 23)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section>
+  <a class="app-back" onclick="navBack()">← back</a>
+  <div class="app-sl-label">Appendix D — ICC Robustness · Tables D1.1–D1.4</div>
+  <h2>ICC robustness — between-firm variance decomposition</h2>
+  <hr class="rule" />
+  <table class="app-table">
+    <thead><tr><th>Scale</th><th>ANOVA ICC</th><th>REML ICC</th><th>Cond. REML</th><th>LOFO max |ΔICC|</th></tr></thead>
+    <tbody>
+      <tr><td>SDM Overall</td><td class="lo">1.1%</td><td class="lo">1.1%</td><td class="lo">~1.1%</td><td class="lo">.003</td></tr>
+      <tr><td>Causal Reasoning</td><td class="lo">0.7%</td><td class="lo">0.7%</td><td class="lo">~0.7%</td><td class="lo">.003</td></tr>
+      <tr><td>Evidence Evaluation</td><td class="lo">2.0%</td><td class="lo">2.0%</td><td class="lo">~2.0%</td><td class="lo">.003</td></tr>
+      <tr><td>Adaptive Learning</td><td class="lo">0.7%</td><td class="lo">0.7%</td><td class="lo">~0.7%</td><td class="lo">.003</td></tr>
+    </tbody>
+  </table>
+  <div class="note" style="margin-top:.7em">Conventional threshold: 5%. All ICCs well below threshold across four estimation methods. LOFO = Leave-One-Firm-Out (61 iterations): removing any single firm changes ICC by at most .003. Bootstrap confidence intervals (1,000 iterations) confirm. Evidence Evaluation has the highest ICC (2.0%) — still below threshold.</div>
+  <div class="finding-box" style="margin-top:.65em">
+    <div class="fb-label">Implication</div>
+    <div class="fb-text">SDM is an individual-level construct. Aggregation to firm level inflates measurement error. The within-firm variance that does exist follows the organizational hierarchy (Pattern 2).</div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     APP F · HIERARCHY REGRESSIONS (index 24)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section>
+  <a class="app-back" onclick="navBack()">← back</a>
+  <div class="app-sl-label">Main paper · §5 — Hierarchy OLS with Firm FE</div>
+  <h2>SDM by organizational tier — full OLS with firm fixed effects</h2>
+  <hr class="rule" />
+  <table class="app-table" style="font-size:.60em">
+    <thead>
+      <tr><th>Variable</th><th>SDM Overall</th><th>Causal Reasoning</th><th>Evidence Eval.</th><th>Adaptive Learning</th></tr>
+    </thead>
+    <tbody>
+      <tr><td colspan="5" style="color:var(--muted); font-style:italic; padding-top:.4em">Organizational tier (ref: T5 Frontline)</td></tr>
+      <tr><td>T1 (Top Leadership)</td><td class="hi">0.070*** (.019)</td><td class="hi">0.071** (.023)</td><td class="dim">0.022 (.022)</td><td class="hi">0.190*** (.031)</td></tr>
+      <tr><td>T2 (Senior Executives)</td><td class="hi">0.047** (.017)</td><td class="hi">0.076*** (.021)</td><td class="dim">−0.010 (.026)</td><td class="hi">0.071* (.030)</td></tr>
+      <tr><td>T3 (Middle Management)</td><td class="hi">0.039*** (.009)</td><td class="hi">0.054*** (.007)</td><td class="dim">0.005 (.016)</td><td class="hi">0.085*** (.022)</td></tr>
+      <tr><td>T4 (Junior Management)</td><td class="hi">0.022** (.008)</td><td class="hi">0.024* (.011)</td><td class="dim">0.006 (.012)</td><td class="hi">0.069*** (.015)</td></tr>
+      <tr><td colspan="5" style="color:var(--muted); font-style:italic; padding-top:.4em">Individual controls</td></tr>
+      <tr><td>STEM Education</td><td class="dim">0.009 (.008)</td><td class="dim">0.013 (.010)</td><td class="dim">0.000 (.009)</td><td class="dim">0.040† (.021)</td></tr>
+      <tr><td>Graduate Degree</td><td>0.041*** (.007)</td><td>0.034*** (.007)</td><td>0.032** (.011)</td><td>0.074*** (.017)</td></tr>
+      <tr><td>Tenure (years)</td><td>−0.001** (.001)</td><td>−0.001* (.001)</td><td>−0.001† (.001)</td><td>−0.000 (.001)</td></tr>
+      <tr><td colspan="5" style="color:var(--muted); font-style:italic; padding-top:.4em">Model</td></tr>
+      <tr><td>N</td><td>9,458</td><td>9,452</td><td>9,456</td><td>9,449</td></tr>
+      <tr><td>Firm FE</td><td>Yes (61)</td><td>Yes (61)</td><td>Yes (61)</td><td>Yes (61)</td></tr>
+      <tr><td>R²</td><td>0.025</td><td>0.020</td><td>0.023</td><td>0.023</td></tr>
+    </tbody>
+  </table>
+  <div class="note" style="margin-top:.5em">OLS with firm-clustered SE. Reference tier: T5 (Frontline). Decision area controls included (not shown). † p &lt; .10, * p &lt; .05, ** p &lt; .01, *** p &lt; .001.</div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     APP G · SDM CORRELATES (index 25)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section>
+  <a class="app-back" onclick="navBack()">← back</a>
+  <div class="app-sl-label">Main paper · §4–5 — SDM Correlates (Partial Convergent)</div>
+  <h2>SDM correlates with likely predictors (partial convergent validity)</h2>
+  <hr class="rule" />
+  <p style="font-size:.67em">Pearson / point-biserial correlations, SDM overall score, N = 9,238–9,467. Variable coding: hierarchical level 1 = senior → 5 = frontline; negative r = higher SDM at senior levels.</p>
+  <table class="app-table">
+    <thead><tr><th>Variable</th><th>r with SDM</th><th>Theoretically predicted direction</th><th>Interpretation</th></tr></thead>
+    <tbody>
+      <tr><td>Vignette accuracy</td><td class="hi">.175***</td><td>+ (criterion)</td><td>Primary behavioral validity evidence — not a proxy</td></tr>
+      <tr><td>Graduate degree</td><td class="lo">.075***</td><td>+</td><td>Post-graduate training reduces myside bias; linked to higher NFC</td></tr>
+      <tr><td>Education level</td><td class="lo">.074***</td><td>+</td><td>Consistent with graduate degree finding</td></tr>
+      <tr><td>Seniority (hierarchical level)</td><td class="lo">−.042***</td><td>− (negative coding)</td><td>Senior managers score higher — consistent with hierarchy gradient</td></tr>
+      <tr><td>Tenure (years)</td><td class="lo">−.044***</td><td>−</td><td>Experience ≠ scientific reasoning method (Camerer &amp; Johnson; Tetlock)</td></tr>
+      <tr><td>STEM background</td><td class="dim">.009 n.s.</td><td>≈ 0 (predicted)</td><td>Technical knowledge ≠ reasoning orientation (Kahan; Stanovich)</td></tr>
+    </tbody>
+  </table>
+  <div class="note" style="margin-top:.6em">All six correlations fall in theoretically predicted directions — including the near-zero STEM and negative tenure results, which are the theoretically correct pattern. These are partial proxies; full convergent validity against AOT and NFC is the priority next validation step.</div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     APP H · FIRM-LEVEL OLS (index 26)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section>
+  <a class="app-back" onclick="navBack()">← back</a>
+  <div class="app-sl-label">Appendix E — Organizational Analyses · §E.2</div>
+  <h2>Firm-level OLS — mean SDM and collective decision accuracy</h2>
+  <hr class="rule" />
+  <p style="font-size:.67em">Currently in the main paper as an exploratory result. Unit of analysis: firm (N = 57 firms with sufficient vignette data). Outcome: firm-level mean vignette accuracy. Predictors: firm mean SDM score and SDM dispersion (SD within firm).</p>
+  <table class="app-table">
+    <thead><tr><th>Predictor</th><th>b</th><th>SE</th><th>p</th><th>Note</th></tr></thead>
+    <tbody>
+      <tr><td>Firm mean SDM</td><td class="hi">.28</td><td>—</td><td class="hi">.013</td><td>1 SD increase in mean SDM → +.28 SD in collective accuracy</td></tr>
+      <tr><td>Firm SDM dispersion (SD)</td><td>—</td><td>—</td><td class="dim">n.s.</td><td>Dispersion does not predict collective accuracy independently</td></tr>
+      <tr><td>Firm size (log N)</td><td>—</td><td>—</td><td class="dim">n.s.</td><td>Included as control</td></tr>
+    </tbody>
+  </table>
+  <div class="callout" style="margin-top:.75em">
+    <div class="callout-title" style="font-size:.78em">Framing decision: N = 57 firms is underpowered for firm-level inference. Currently in the main paper as exploratory. The individual-level finding (β = .12, N = 9,458) is the primary result. Open question: does this belong in the main paper — or should it move to an appendix to avoid overreach?</div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     APP I · CONVERGENT VALIDITY PLAN: AOT + NFC (index 27)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section>
+  <a class="app-back" onclick="navBack()">← back</a>
+  <div class="app-sl-label">Future work — Proposed convergent validity study</div>
+  <h2>AOT and NFC — the missing nomological links</h2>
+  <hr class="rule" />
+  <div class="two-col">
+    <div class="col">
+      <p style="font-size:.68em; font-weight:600; color:var(--navy); margin-bottom:.4em">What these constructs are</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-n" style="color:var(--terra)">AOT</div>
+          <div class="step-t"><strong>Actively Open-minded Thinking</strong> (Baron, 1991). Willingness to seek information that could contradict current beliefs, to consider alternative viewpoints, and to revise conclusions when evidence warrants. Measured by AOT-7 (Haran et al., 2013) or the 41-item full scale. Directly maps to SDM's <em>Adaptive Learning</em> dimension.</div>
+        </div>
+        <div class="step" style="margin-top:.5em">
+          <div class="step-n" style="color:var(--teal)">NFC</div>
+          <div class="step-t"><strong>Need for Cognition</strong> (Cacioppo &amp; Petty, 1982). Intrinsic motivation to engage in and enjoy effortful analytical thinking. High-NFC individuals seek complex problems and process information systematically. Measured by NFC-6 (Lins de Holanda Coelho et al., 2020). Maps to SDM's <em>Causal Reasoning</em> dimension.</div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <p style="font-size:.68em; font-weight:600; color:var(--navy); margin-bottom:.4em">Why we expect moderate, not high, correlations</p>
+      <p style="font-size:.67em; margin-bottom:.6em">SDM measures the structured <em>practice</em> of scientific reasoning in decision contexts. AOT and NFC measure <em>dispositions</em> — openness and motivation. A high-NFC manager may think hard but not scientifically. A high-AOT manager may update beliefs but without structured hypothesis testing. SDM requires the specific methodology.</p>
+      <div class="stats" style="flex-direction:column; gap:.45em">
+        <div class="stat alt"><div class="n">r ≈ .20–.40</div><div class="lbl">Expected range · convergent without collapsing construct distinctiveness</div></div>
+        <div class="stat"><div class="n">r &gt; .60</div><div class="lbl">Would indicate SDM is redundant with AOT/NFC · not expected</div></div>
+      </div>
+      <p style="font-size:.66em; font-weight:600; color:var(--navy); margin-top:.75em; margin-bottom:.35em">Proposed addition</p>
+      <div class="steps">
+        <div class="step"><div class="step-n">1</div><div class="step-t">Recruit N ~ 250 managers via Prolific (subset of original deployment population)</div></div>
+        <div class="step"><div class="step-n">2</div><div class="step-t">Administer SDM (24 items) + AOT-7 + NFC-6 + vignette accuracy task</div></div>
+        <div class="step"><div class="step-n">3</div><div class="step-t">Report Pearson r matrix: SDM × AOT, SDM × NFC, AOT × NFC</div></div>
+        <div class="step"><div class="step-n">4</div><div class="step-t">Add to nomological network table; include in §4 Validation as Criterion 6</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>
+  Reveal.initialize({
+    width: 1100, height: 700,
+    margin: 0.02, minScale: 0.1, maxScale: 2.0,
+    center: false,
+    hash: true, progress: true, slideNumber: true,
+    transition: 'fade', transitionSpeed: 'default',
+    controlsTutorial: false, fragments: true,
+  });
+
+  // ── Appendix navigation ──────────────────────────────
+  window._navStack = [];
+  function navTo(idx) {
+    window._navStack.push({ h: Reveal.getState().indexh, v: Reveal.getState().indexv || 0 });
+    Reveal.slide(idx, 0, -1);
+  }
+  function navBack() {
+    var state = window._navStack.pop();
+    if (state) { Reveal.slide(state.h, state.v, -1); }
+    else { Reveal.slide(17); } // fallback: appendix overview
+  }
+</script>
+</body>
+</html>
