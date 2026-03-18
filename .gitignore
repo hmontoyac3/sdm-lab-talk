@@ -1,0 +1,7 @@
+.DS_Store
+*.mov
+*.mp4
+*.pdf
+*.txt
+*.py
+requirements.txt
