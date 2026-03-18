@@ -779,21 +779,43 @@
     <div class="col narrow">
       <p style="font-size:.64em; margin-bottom:.7em"><strong>N = 462 practicing managers</strong> · Prolific (354) + MBA alumni (48) + Italian firm managers (60) · randomly assigned to 3 conditions</p>
       <div class="stats" style="flex-direction:column; gap:.3em; margin-top:.4em">
-        <div class="stat fragment fade-up" data-fragment-index="2">
+        <div class="stat fragment fade-up" data-fragment-index="3">
           <div class="n">d = 1.40</div>
           <div class="lbl">Scientific vs. Control · Δ = +0.511*** · <em>d</em> = Cohen's d (effect size in SD units; &gt;0.8 = large)</div>
         </div>
-        <div class="stat dark fragment fade-up" data-fragment-index="3">
+        <div class="stat dark fragment fade-up" data-fragment-index="4">
           <div class="n">d = 2.09</div>
           <div class="lbl">Scientific vs. Intuitive · Δ = +0.780***</div>
         </div>
       </div>
-      <p class="fragment fade-up" data-fragment-index="4" style="font-size:.56em; color:var(--muted); margin-top:.5em">F(2, 459) = 175.21, p &lt; .001 · η² = .43 · one-way ANOVA testing whether condition means differ · η² = share of total variance explained · replicated across all 3 subsamples</p>
+      <p class="fragment fade-up" data-fragment-index="5" style="font-size:.56em; color:var(--muted); margin-top:.5em">F(2, 459) = 175.21, p &lt; .001 · η² = .43 · one-way ANOVA testing whether condition means differ · η² = share of total variance explained · replicated across all 3 subsamples</p>
     </div>
-    <!-- Right: violin plot -->
-    <div class="col wider" style="display:flex; align-items:center; justify-content:center">
-      <div class="fragment fade-up" data-fragment-index="1" style="width:100%">
-        <img src="figures/figure1_prime_violins.png" alt="Priming effects violin plot" style="max-height:50vh; width:100%; object-fit:contain" />
+    <!-- Right: balance table first, then violin covers it -->
+    <div class="col wider" style="position:relative; height:50vh; overflow:hidden">
+      <!-- Step 1: balance table -->
+      <div class="fragment fade-up" data-fragment-index="1"
+           style="position:absolute; top:0; left:0; width:100%; height:100%; font-size:.60em; border:1px solid var(--rule); border-radius:4px; padding:.6em .8em; background:var(--ivory); box-sizing:border-box">
+        <p style="font-weight:600; color:var(--navy); margin-bottom:.35em; text-transform:uppercase; letter-spacing:.04em; font-size:1em">Balance check — groups comparable at baseline</p>
+        <table style="width:100%; border-collapse:collapse; text-align:center; line-height:1.65">
+          <thead>
+            <tr style="border-bottom:1px solid var(--rule)">
+              <th style="text-align:left; padding-right:.5em"></th>
+              <th>Control</th><th>Intuitive</th><th>Scientific</th><th style="color:var(--muted)"><em>p</em></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td style="text-align:left">Age (M)</td><td>40.5</td><td>41.9</td><td>40.4</td><td style="color:var(--teal)">.437</td></tr>
+            <tr><td style="text-align:left">Gender (% male)</td><td>56%</td><td>54%</td><td>55%</td><td style="color:var(--teal)">.962</td></tr>
+            <tr><td style="text-align:left">Education (M)</td><td>3.92</td><td>3.92</td><td>3.84</td><td style="color:var(--teal)">.848</td></tr>
+            <tr><td style="text-align:left">Tenure, yrs (M)</td><td>9.2</td><td>9.8</td><td>8.3</td><td style="color:var(--teal)">.264</td></tr>
+          </tbody>
+        </table>
+        <p style="color:var(--teal); font-style:italic; margin-top:.35em">All p &gt; .26 — randomization worked.</p>
+      </div>
+      <!-- Step 2: violin fades in, fully covers the table -->
+      <div class="fragment fade-in" data-fragment-index="2"
+           style="position:absolute; top:0; left:0; width:100%; height:100%; background:var(--ivory); display:flex; flex-direction:column; align-items:center; justify-content:center">
+        <img src="figures/figure1_prime_violins.png" alt="Priming effects violin plot" style="max-height:48vh; width:100%; object-fit:contain" />
       </div>
     </div>
   </div>
