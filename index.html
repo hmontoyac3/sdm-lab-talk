@@ -776,7 +776,13 @@
       </tr>
     </tbody>
   </table>
-  <p style="font-size:.56em; color:var(--muted); margin-top:.55em; font-style:italic">Full criteria details — expert protocol, VIF table, CFA specs, vignette OLS — available in the appendix.</p>
+  <div class="app-links" style="margin-top:.6em; display:flex; flex-wrap:wrap; gap:.35em">
+    <a class="app-link" onclick="navTo(19)">C1 → Expert review protocol &amp; item elimination</a>
+    <a class="app-link" onclick="navTo(21)">C2 → VIF table — all 24 items</a>
+    <a class="app-link" onclick="navTo(22)">C3 → Full experiment results (subsamples, conditions)</a>
+    <a class="app-link" onclick="navTo(20)">C4 → CFA specs — why not standard CFA?</a>
+    <a class="app-link" onclick="navTo(28)">C5 → Vignette OLS table + accuracy figure</a>
+  </div>
   <div class="snav">
     <span class="s">Motivation</span><span class="sep">·</span>
     <span class="s">Construct</span><span class="sep">·</span>
@@ -801,7 +807,7 @@
         <div class="stat"><div class="n">8</div><div class="lbl">items eliminated on expert flags · 40 → 32</div></div>
       </div>
       <div class="app-links" style="margin-top:.6em">
-        <a class="app-link" onclick="navTo(22)">→ App A: Expert review protocol</a>
+        <a class="app-link" onclick="navTo(19)">→ App A: Expert review protocol</a>
       </div>
       <p style="font-size:.52em; color:var(--muted); font-style:italic; margin-top:.5em; line-height:1.45">* Panel: faculty from Bocconi, INSEAD, RSM &amp; Bayes — active researchers in evidence-based strategy and experimentation. Not colleagues asked a favour. Most cited: 3,100+ GS citations.</p>
     </div>
@@ -812,7 +818,7 @@
         <div class="stat alt"><div class="n">each item</div><div class="lbl">contributes distinct information — no indicator is redundant</div></div>
       </div>
       <div class="app-links" style="margin-top:.6em">
-        <a class="app-link" onclick="navTo(24)">→ App C: VIF table (all 24 items)</a>
+        <a class="app-link" onclick="navTo(21)">→ App C: VIF table (all 24 items)</a>
       </div>
     </div>
   </div>
@@ -879,7 +885,7 @@
     </div>
   </div>
   <div class="app-links" style="margin-top:.4em">
-    <a class="app-link" onclick="navTo(25)">→ App C: Experiment full results (item-level &amp; subsample tables)</a>
+    <a class="app-link" onclick="navTo(22)">→ App C: Experiment full results (item-level &amp; subsample tables)</a>
   </div>
   <div class="snav">
     <span class="s">Motivation</span><span class="sep">·</span>
@@ -917,7 +923,7 @@
     </div>
   </div>
   <div class="app-links">
-    <a class="app-link" onclick="navTo(23)">→ App B: Full CFA specifications &amp; fit indices</a>
+    <a class="app-link" onclick="navTo(20)">→ App B: Full CFA specifications &amp; fit indices</a>
   </div>
   <div class="snav">
     <span class="s">Motivation</span><span class="sep">·</span>
@@ -952,7 +958,7 @@
     </div>
   </div>
   <div class="app-links">
-    <a class="app-link" onclick="navTo(28)">→ Main paper §4–5: SDM correlates table (education, tenure, STEM, tier)</a>
+    <a class="app-link" onclick="navTo(25)">→ Main paper §4–5: SDM correlates table (education, tenure, STEM, tier)</a>
   </div>
   <div class="snav">
     <span class="s">Motivation</span><span class="sep">·</span>
@@ -1072,8 +1078,9 @@
     <div class="fb-label">What this means</div>
     <div class="fb-text">Large firm or small, high-revenue or low — it barely matters. 99% of the variance in SDM is between individual managers. To understand why some managers reason more scientifically, look at the person, not the organization.</div>
   </div>
+  <p style="font-size:.54em; color:var(--muted); font-style:italic; margin-top:.45em">Caveat: Upper Management tier ICC = 5.01% — at threshold. 95% of variance at that tier is still within-firm; overall ICC of 1.1% reflects all tiers combined.</p>
   <div class="app-links">
-    <a class="app-link" onclick="navTo(26)">→ App D: ICC robustness (ANOVA / REML / LOFO / bootstrap)</a>
+    <a class="app-link" onclick="navTo(23)">→ App D: ICC robustness (ANOVA / REML / LOFO / bootstrap)</a>
   </div>
   <div class="snav">
     <span class="s">Motivation</span><span class="sep">·</span>
@@ -1112,8 +1119,9 @@
           <div class="step-t">Survives firm fixed effects and controls — <strong>structural distance from the CEO</strong> is the operative role category or span of control.</div>
         </div>
       </div>
-      <div class="app-links" style="margin-top:.8em">
-        <a class="app-link" onclick="navTo(27)">→ Appendix: Full hierarchy regressions</a>
+      <p style="font-size:.54em; color:var(--muted); font-style:italic; margin-top:.5em">Robustness: layers2ceo r = −.072*** vs tiers r = −.042***. When both enter same model, tiers becomes marginal — layers2ceo is driving the result.</p>
+      <div class="app-links" style="margin-top:.4em">
+        <a class="app-link" onclick="navTo(24)">→ Appendix: Full hierarchy regressions</a>
       </div>
     </div>
   </div>
@@ -1219,7 +1227,8 @@
       </div>
     </div>
   </div>
-  <p style="font-size:.56em; color:var(--muted); font-style:italic; margin-top:.6em">We also tested education and tenure — both consistent with theory. Details in backup slides.</p>
+  <p style="font-size:.54em; color:var(--muted); font-style:italic; margin-top:.5em">3 operationalizations: (a) T1 vs T5: χ²=2.70, p=.10 · (b) T1+T2 vs T4+T5: χ²=1.31, p=.252 · (c) CEO vs 5+ layers: χ²=0.40, p=.527 — all n.s.</p>
+  <p style="font-size:.54em; color:var(--muted); font-style:italic; margin-top:.3em">Education and tenure also tested — both consistent with theory. Details in backup slides.</p>
   <div class="snav">
     <span class="s">Motivation</span><span class="sep">·</span>
     <span class="s">Construct</span><span class="sep">·</span>
@@ -1358,7 +1367,7 @@
     </div>
   </div>
   <div class="app-links">
-    <a class="app-link" onclick="navTo(28)">→ Main paper §4–5: SDM correlates table (education, tenure, STEM, tier)</a>
+    <a class="app-link" onclick="navTo(25)">→ Main paper §4–5: SDM correlates table (education, tenure, STEM, tier)</a>
   </div>
   <div class="snav">
     <span class="s">Motivation</span><span class="sep">·</span>
@@ -1404,7 +1413,7 @@
     </div>
   </div>
   <div class="app-links">
-    <a class="app-link" onclick="navTo(29)">→ App E: Firm-level OLS full table</a>
+    <a class="app-link" onclick="navTo(26)">→ App E: Firm-level OLS full table</a>
   </div>
   <div class="snav">
     <span class="s">Motivation</span><span class="sep">·</span>
@@ -1439,7 +1448,7 @@
     <div class="q">
       <div class="q-tag" style="color:var(--terra)">Convergent</div>
       <div class="q-body">
-        <strong>AOT and NFC not administered</strong> — the two closest established constructs (Actively Open-minded Thinking; Need for Cognition) were not collected in the deployment study. Proxies are consistent with theory but do not substitute. <a class="app-link" style="vertical-align:middle" onclick="navTo(30)">→ App I: proposed fix</a>
+        <strong>AOT and NFC not administered</strong> — the two closest established constructs (Actively Open-minded Thinking; Need for Cognition) were not collected in the deployment study. Proxies are consistent with theory but do not substitute. <a class="app-link" style="vertical-align:middle" onclick="navTo(27)">→ App I: proposed fix</a>
       </div>
     </div>
     <div class="q amber">
@@ -1552,43 +1561,43 @@
   <p style="font-size:.66em; color:var(--muted)">Ask me for any of these during Q&amp;A.</p>
   <p style="font-size:.60em; color:var(--muted); margin-bottom:.5em">Paper appendices A–E · supplementary backup slides below</p>
   <div class="app-grid">
-    <div class="app-item" onclick="navTo(22)">
+    <div class="app-item" onclick="navTo(19)">
       <div class="app-id">A</div>
       <div class="app-text"><strong>Survey Instrument (App A)</strong>Item list · expert review protocol (§A.3) · elimination criteria · Tables A1–A3</div>
     </div>
-    <div class="app-item" onclick="navTo(23)">
+    <div class="app-item" onclick="navTo(20)">
       <div class="app-id">B</div>
       <div class="app-text"><strong>Psychometric Details (App B)</strong>CFA specifications · fit indices · interfactor correlations · Tables B.1–B.5</div>
     </div>
-    <div class="app-item" onclick="navTo(25)">
+    <div class="app-item" onclick="navTo(22)">
       <div class="app-id">C</div>
       <div class="app-text"><strong>Experimental Priming (App C)</strong>Results by subsample · by SDM component · item-level effects · prime texts · Tables C.1–C.5</div>
     </div>
-    <div class="app-item" onclick="navTo(26)">
+    <div class="app-item" onclick="navTo(23)">
       <div class="app-id">D</div>
       <div class="app-text"><strong>ICC Robustness (App D)</strong>ANOVA / REML / Conditional REML · LOFO sensitivity · bootstrap CIs · Tables D1.1–D1.4</div>
     </div>
-    <div class="app-item" onclick="navTo(29)">
+    <div class="app-item" onclick="navTo(26)">
       <div class="app-id">E</div>
       <div class="app-text"><strong>Organizational Analyses (App E)</strong>Firm-level OLS · mean SDM → collective accuracy · descriptive statistics · Table E.1</div>
     </div>
-    <div class="app-item" onclick="navTo(24)" style="opacity:.75">
+    <div class="app-item" onclick="navTo(21)" style="opacity:.75">
       <div class="app-id" style="background:var(--navy2)">—</div>
       <div class="app-text"><strong>VIF — indicator non-redundancy</strong>All 24 items · tolerance values · <em>Main paper, Table 3</em></div>
     </div>
-    <div class="app-item" onclick="navTo(27)" style="opacity:.75">
+    <div class="app-item" onclick="navTo(24)" style="opacity:.75">
       <div class="app-id" style="background:var(--navy2)">—</div>
       <div class="app-text"><strong>Hierarchy OLS — full table</strong>4 outcomes × 5 tiers · firm FE · <em>Main paper, §5</em></div>
     </div>
-    <div class="app-item" onclick="navTo(28)" style="opacity:.75">
+    <div class="app-item" onclick="navTo(25)" style="opacity:.75">
       <div class="app-id" style="background:var(--navy2)">—</div>
       <div class="app-text"><strong>SDM correlates (partial convergent)</strong>Education · tenure · STEM · vignette · tier · <em>Main paper, §4–5</em></div>
     </div>
-    <div class="app-item" onclick="navTo(30)" style="opacity:.75">
+    <div class="app-item" onclick="navTo(27)" style="opacity:.75">
       <div class="app-id" style="background:var(--navy2)">—</div>
       <div class="app-text"><strong>AOT + NFC plan</strong>Proposed subsample design · expected correlations · <em>Future work</em></div>
     </div>
-    <div class="app-item" onclick="navTo(31)" style="opacity:.75">
+    <div class="app-item" onclick="navTo(28)" style="opacity:.75">
       <div class="app-id" style="background:var(--navy2)">—</div>
       <div class="app-text"><strong>Vignette OLS table + figure</strong>5 progressive specs · no FE / firm FE · subdimension r · quintile figure · <em>Main paper, §5</em></div>
     </div>
