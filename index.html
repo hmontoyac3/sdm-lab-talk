@@ -1082,7 +1082,7 @@
     <span class="s on">Application</span><span class="sep">·</span>
     <span class="s">Discussion</span>
   </div>
-  <aside class="notes">Analysis: null (unconditional) multilevel model, REML estimation, firm_id as grouping factor — ICC = var_between / (var_between + var_within). Reported for SDM overall and each of 3 dimensions. Robustness: one-way ANOVA, conditional REML, leave-one-firm-out (LOFO, 61 iterations), bootstrap (1,000 draws). Scripts: 08_icc.py, 09_bootstrap_icc.py, 10_lofo_icc.py.</aside>
+  <aside class="notes">Analysis: null (unconditional) multilevel model, REML estimation, firm_id as grouping factor — ICC = var_between / (var_between + var_within). Reported for SDM overall and each of 3 dimensions. Robustness: one-way ANOVA, conditional REML, leave-one-firm-out (LOFO, 61 iterations), bootstrap (1,000 draws). Scripts: 08_icc.py, 09_bootstrap_icc.py, 10_lofo_icc.py. Caveat for Q&A: at the Upper Management tier specifically, between-firm ICC reaches 5.01% — just at the conventional threshold. The accurate response if challenged: "95% of variance at that tier is still within-firm; the overall ICC of 1.1% reflects all tiers combined, and even the highest-ICC tier is overwhelmingly individual-level."</aside>
 </section>
 
 <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -1109,7 +1109,7 @@
         </div>
         <div class="step fragment fade-up">
           <div class="step-n">→</div>
-          <div class="step-t">Survives firm fixed effects and controls — <strong>position in the hierarchy</strong>, not which firm or demographics.</div>
+          <div class="step-t">Survives firm fixed effects and controls — <strong>structural distance from the CEO</strong> is the operative role category or span of control.</div>
         </div>
       </div>
       <div class="app-links" style="margin-top:.8em">
@@ -1124,7 +1124,7 @@
     <span class="s on">Application</span><span class="sep">·</span>
     <span class="s">Discussion</span>
   </div>
-  <aside class="notes">Analysis: OLS regression — SDM overall ~ tiers (5-level categorical, frontline T5 as reference). Firm fixed effects + clustered standard errors. Progressive controls: M1 raw, M2 + education/tenure, M3 + decision domain. b = .07 is the T1 vs T5 coefficient. Also run with 3-level hierarchy variable; pattern unchanged. Script: 11_level_regressions.py.</aside>
+  <aside class="notes">Analysis: OLS regression — SDM overall ~ tiers (5-level categorical, frontline T5 as reference). Firm fixed effects + clustered standard errors. Progressive controls: M1 raw, M2 + education/tenure, M3 + decision domain. b = .07 is the T1 vs T5 coefficient. Also run with 3-level hierarchy variable; pattern unchanged. Script: 11_level_regressions.py. Robustness: the same gradient is cleaner with layers2ceo as the primary hierarchy variable (r=−.072*** vs r=−.042*** for tiers; R²=.0052 vs .0018). When both enter the same model, tiers becomes marginal and flips sign — layers2ceo is driving the result. Flag proactively if methodological questions arise: "The gradient is even cleaner when measured as structural distance from the CEO directly."</aside>
 </section>
 
 <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -1227,7 +1227,7 @@
     <span class="s on">Application</span><span class="sep">·</span>
     <span class="s">Discussion</span>
   </div>
-  <aside class="notes">Analysis: 2×2 contingency table — SDM median split (high/low) × tier (top T1 vs. frontline T5). Chi-square test of independence: χ²(1) = 2.70, p = .10, n.s. Top management (T1, N = 554): 53.2% above median SDM. Frontline (T5, N = 4,254): 49.4% above median. Also run with layers2ceo (CEO layer 0 vs. frontline layer 5): χ²(1) = 0.40, p = .53, n.s. Script: 35b_layers2ceo_vs_tiers.py.</aside>
+  <aside class="notes">Analysis: 2×2 contingency table. Three versions tested: (a) T1 alone vs T5 alone: 53.2% of T1 above median SDM, 49.4% of T5 above median — χ²(1)=2.70, p=.10, n.s. (b) T1+T2 combined vs T4+T5 combined: 54.6% high SDM in top tier vs 45.4% high SDM in bottom tier — χ²(1)=1.31, p=.252, n.s. (c) layers2ceo: CEO vs 5+ layers — χ²(1)=0.40, p=.527, n.s. All three operationalizations give the same conclusion. If asked for the exact numbers, use version (a) for the slide figures (46.8% below median for T1; 49.4% above for T5) and note that all other cuts confirm the result.</aside>
 </section>
 
 <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
