@@ -1116,10 +1116,10 @@
         </div>
         <div class="step fragment fade-up">
           <div class="step-n">→</div>
-          <div class="step-t">Survives firm fixed effects and controls — <strong>structural distance from the CEO</strong> is the operative role category or span of control.</div>
+          <div class="step-t">Survives firm fixed effects and controls — <strong>structural distance from the CEO</strong> is what matters, not job title or span of control.</div>
         </div>
       </div>
-      <p style="font-size:.54em; color:var(--muted); font-style:italic; margin-top:.5em">Robustness: layers2ceo r = −.072*** vs tiers r = −.042***. When both enter same model, tiers becomes marginal — layers2ceo is driving the result.</p>
+      <p style="font-size:.54em; color:var(--muted); font-style:italic; margin-top:.5em">Robustness: tiers is constructed from layers2ceo + jobrole + directreports. Component decomposition (35c): only layers2ceo is significant (β = −.086***); jobrole and directreports n.s.</p>
       <div class="app-links" style="margin-top:.4em">
         <a class="app-link" onclick="navTo(24)">→ Appendix: Full hierarchy regressions</a>
       </div>
@@ -1132,7 +1132,7 @@
     <span class="s on">Application</span><span class="sep">·</span>
     <span class="s">Discussion</span>
   </div>
-  <aside class="notes">Analysis: OLS regression — SDM overall ~ tiers (5-level categorical, frontline T5 as reference). Firm fixed effects + clustered standard errors. Progressive controls: M1 raw, M2 + education/tenure, M3 + decision domain. b = .07 is the T1 vs T5 coefficient. Also run with 3-level hierarchy variable; pattern unchanged. Script: 11_level_regressions.py. Robustness: the same gradient is cleaner with layers2ceo as the primary hierarchy variable (r=−.072*** vs r=−.042*** for tiers; R²=.0052 vs .0018). When both enter the same model, tiers becomes marginal and flips sign — layers2ceo is driving the result. Flag proactively if methodological questions arise: "The gradient is even cleaner when measured as structural distance from the CEO directly."</aside>
+  <aside class="notes">Analysis: OLS regression — SDM overall ~ tiers (5-level categorical, frontline T5 as reference). Firm fixed effects + clustered standard errors. Progressive controls: M1 raw, M2 + education/tenure, M3 + decision domain. b = .07 is the T1 vs T5 coefficient. Also run with 3-level hierarchy variable; pattern unchanged. Script: 11_level_regressions.py. Robustness: tiers is a constructed variable (from Stata do-file: tiers = f(layers2ceo, jobrole, directreports)) — entering both in the same model is invalid (multicollinearity by construction). Correct robustness: component decomposition (script 35c) — replace tiers with its three components separately. Result: only layers2ceo is significant (β = −.086***, pr² = .0047); jobrole (p = .068, n.s.) and directreports (p = .835, n.s.) add nothing once layers2ceo is controlled. R² with layers2ceo alone (.0052) matches R² of all three components together (.0056). Interpretation: the gradient reflects structural distance to the CEO, not job role or span of control.</aside>
 </section>
 
 <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
