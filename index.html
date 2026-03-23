@@ -1079,6 +1079,7 @@
     <div class="fb-text">Large firm or small, high-revenue or low — it barely matters. 99% of the variance in SDM is between individual managers. To understand why some managers reason more scientifically, look at the person, not the organization.</div>
   </div>
   <p style="font-size:.54em; color:var(--muted); font-style:italic; margin-top:.45em">Caveat: Upper Management tier ICC = 5.01% — at threshold. 95% of variance at that tier is still within-firm; overall ICC of 1.1% reflects all tiers combined.</p>
+  <p class="fragment fade-up" style="font-size:.68em; color:var(--terra); margin-top:.55em; font-style:italic">If 99% of the variation is between people — where does that variation come from?</p>
   <div class="app-links">
     <a class="app-link" onclick="navTo(23)">→ App D: ICC robustness (ANOVA / REML / LOFO / bootstrap)</a>
   </div>
@@ -1120,6 +1121,7 @@
         </div>
       </div>
       <p style="font-size:.54em; color:var(--muted); font-style:italic; margin-top:.5em">Robustness: tiers is constructed from layers2ceo + jobrole + directreports. Component decomposition (35c): only layers2ceo is significant (β = −.086***); jobrole and directreports n.s.</p>
+      <p class="fragment fade-up" style="font-size:.68em; color:var(--terra); margin-top:.5em; font-style:italic">Which dimension of SDM actually carries this gradient?</p>
       <div class="app-links" style="margin-top:.4em">
         <a class="app-link" onclick="navTo(24)">→ Appendix: Full hierarchy regressions</a>
       </div>
@@ -1142,21 +1144,21 @@
   <div class="label">Application · Pattern 2 (continued)</div>
   <h2>The gradient is driven by how managers adapt to evidence — not by how much evidence they seek</h2>
   <hr class="rule" />
-  <div class="two-col" style="margin-top:.2em; align-items:center">
+  <div class="two-col" style="margin-top:.2em; align-items:flex-start">
     <!-- Figure column: one dimension appears at a time -->
-    <div class="col wider" style="position:relative; min-height:48vh">
+    <div class="col wider" style="position:relative; height:54vh">
       <img src="figures/hier_dim_causal.png" alt="Causal Reasoning by tier"
-           style="max-height:48vh; width:100%; object-fit:contain; position:absolute; top:0; left:0"
+           style="max-height:54vh; width:100%; object-fit:contain; position:absolute; top:0; left:0"
            class="fragment fade-in-then-out" data-fragment-index="1" />
       <img src="figures/hier_dim_evidence.png" alt="Evidence Evaluation by tier"
-           style="max-height:48vh; width:100%; object-fit:contain; position:absolute; top:0; left:0"
+           style="max-height:54vh; width:100%; object-fit:contain; position:absolute; top:0; left:0"
            class="fragment fade-in-then-out" data-fragment-index="2" />
       <img src="figures/hier_dim_adaptive.png" alt="Adaptive Learning by tier"
-           style="max-height:48vh; width:100%; object-fit:contain; position:absolute; top:0; left:0"
+           style="max-height:54vh; width:100%; object-fit:contain; position:absolute; top:0; left:0"
            class="fragment fade-in" data-fragment-index="3" />
     </div>
     <!-- Stats column: one delta appears at a time -->
-    <div class="col narrow" style="display:flex; flex-direction:column; gap:.5em; justify-content:center">
+    <div class="col narrow" style="display:flex; flex-direction:column; gap:.5em; justify-content:flex-start; padding-top:.2em">
       <div class="delta fragment fade-up" data-fragment-index="1" style="padding:.6em .8em">
         <div class="delta-lbl">Causal Reasoning</div>
         <div class="delta-n" style="font-size:1.8em">Δ = .07***</div>
@@ -1172,8 +1174,7 @@
         <div class="delta-n" style="font-size:1.8em">Δ = .19***</div>
         <div class="delta-sub" style="font-size:.60em; margin-top:.15em">Top vs. Frontline · strongest gradient</div>
       </div>
-      <p class="fragment fade-up" data-fragment-index="4" style="font-size:.60em; color:var(--muted); margin-top:.2em; font-style:italic">AL–EE dissociation (Δ = .15, p &lt; .001) — also validates construct distinctiveness.</p>
-      <p class="fragment fade-up" data-fragment-index="5" style="font-size:.60em; color:var(--muted); margin-top:.3em; font-style:italic">Tenure shows the mirror pattern: CR and EE decline with seniority (cognitive entrenchment), AL does not (r = −.008, n.s.) — consistent with hierarchical exposure, not accumulated habit.</p>
+      <p class="fragment fade-up" data-fragment-index="4" style="font-size:.60em; color:var(--muted); margin-top:.3em; font-style:italic">AL–EE dissociation (Δ = .15, p &lt; .001) — also validates construct distinctiveness.</p>
     </div>
   </div>
   <div class="snav">
@@ -1184,6 +1185,58 @@
     <span class="s">Discussion</span>
   </div>
   <aside class="notes">Analysis: same OLS setup as hierarchy slide, run separately for each dimension (CR, EE, AL ~ tiers, firm FE + clustered SE). Δ = .19 is the AL T1 vs T5 coefficient; Δ = .02 n.s. is the EE T1 vs T5 coefficient. AL–EE dissociation tested via Δ in coefficients (.19 − .04 = .15, p &lt; .001). Script: 11b_level_regressions_dimensions.py.</aside>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     13c · TENURE MIRROR PATTERN
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section>
+  <div class="label">Application · Pattern 2 (continued)</div>
+  <h2>The gradient reflects where you sit — not how long you've been there</h2>
+  <hr class="rule" />
+  <div class="two-col" style="margin-top:.8em; align-items:flex-start; gap:2.5em">
+    <div class="col">
+      <p style="font-size:.66em; color:var(--muted); margin-bottom:.55em; font-weight:500; text-transform:uppercase; letter-spacing:.06em">Tenure × SDM dimensions</p>
+      <div class="stats" style="flex-direction:column; gap:.45em">
+        <div class="stat dark fragment fade-up">
+          <div class="n" style="font-size:1.35em">r = −.028**</div>
+          <div class="lbl">Causal Reasoning declines with years at firm</div>
+        </div>
+        <div class="stat dark fragment fade-up">
+          <div class="n" style="font-size:1.35em">r = −.031**</div>
+          <div class="lbl">Evidence Evaluation declines with years at firm</div>
+        </div>
+        <div class="stat alt fragment fade-up">
+          <div class="n" style="font-size:1.35em">r = −.008 n.s.</div>
+          <div class="lbl">Adaptive Learning — flat across all tenure bands</div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="steps" style="margin-top:2.2em">
+        <div class="step fragment fade-up">
+          <div class="step-n">→</div>
+          <div class="step-t">The longer you've been at the firm, the more <strong>cognitively entrenched</strong> your reasoning and evidence habits become.</div>
+        </div>
+        <div class="step fragment fade-up">
+          <div class="step-n">→</div>
+          <div class="step-t">AL — the dimension that follows the hierarchy — is <strong>immune to tenure</strong>. It responds to positional exposure to decisions, not to accumulated time.</div>
+        </div>
+        <div class="step fragment fade-up">
+          <div class="step-n">→</div>
+          <div class="step-t" style="color:var(--terra)">So: does the hierarchy just <strong>select</strong> the most scientific thinkers for the top?</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="snav">
+    <span class="s">Motivation</span><span class="sep">·</span>
+    <span class="s">Construct</span><span class="sep">·</span>
+    <span class="s">Validation</span><span class="sep">·</span>
+    <span class="s on">Application</span><span class="sep">·</span>
+    <span class="s">Discussion</span>
+  </div>
+  <aside class="notes">Analysis: bivariate correlations — tenure × SDM dimensions (N ≈ 9,450). r(CR, tenure) = −.028, p = .006**; r(EE, tenure) = −.031, p = .003**; r(AL, tenure) = −.008, p = .42, n.s. Script: 35_variable_exploration.py §1a. The mirror pattern: the same AL-EE dissociation that appears across hierarchy levels appears here in reverse — CR and EE compress with time (cognitive entrenchment from routine), while AL is insensitive to years at firm. Interpretation: AL reflects positional exposure to high-stakes decisions, not accumulated habit. This slide bridges to the selection test: if the hierarchy selects for scientific thinkers, we would expect top managers to cluster high on SDM. The 2×2 tests that directly.</aside>
 </section>
 
 <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -1229,7 +1282,7 @@
     </div>
   </div>
   <p style="font-size:.54em; color:var(--muted); font-style:italic; margin-top:.5em">3 operationalizations: (a) T1 vs T5: χ²=2.70, p=.10 · (b) T1+T2 vs T4+T5: χ²=1.31, p=.252 · (c) CEO vs 5+ layers: χ²=0.40, p=.527 — all n.s.</p>
-  <p style="font-size:.54em; color:var(--muted); font-style:italic; margin-top:.3em">Education and tenure also tested — both consistent with theory. Details in backup slides.</p>
+  <p class="fragment fade-up" style="font-size:.68em; color:var(--terra); margin-top:.55em; font-style:italic">If the position shapes SDM — does a higher score actually improve decisions?</p>
   <div class="snav">
     <span class="s">Motivation</span><span class="sep">·</span>
     <span class="s">Construct</span><span class="sep">·</span>
@@ -1363,6 +1416,7 @@
       </div>
       <p class="fragment fade-up" style="font-size:.56em; color:var(--muted); margin-top:.3em; border-top:1px solid var(--rule); padding-top:.4em">β = .12, p &lt; .001 · stable across 4 specs · not confounded by tier, education, or tenure</p>
       <p class="fragment fade-up" style="font-size:.55em; color:var(--muted); font-style:italic; margin-top:.25em"><strong style="color:var(--navy); font-style:normal">What this establishes:</strong> the scale captures something real with behavioral consequences — not self-perception alone. &nbsp;<strong style="color:var(--navy); font-style:normal">What it doesn't:</strong> that training SDM will causally improve decisions (requires a pre/post intervention study).</p>
+      <p class="fragment fade-up" style="font-size:.68em; color:var(--terra); margin-top:.5em; font-style:italic">Does this individual signal aggregate to the firm?</p>
     </div>
     <div class="col wider" style="display:flex; flex-direction:column; align-items:center">
       <img src="figures/sdm_quintile_vignette.png" alt="Vignette accuracy by SDM quintile" style="width:100%; max-height:44vh; object-fit:contain" />
