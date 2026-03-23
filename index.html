@@ -317,7 +317,7 @@
 
     /* ── PROGRESS / SLIDE NUMBER ────────────────────── */
     .reveal .progress { color: var(--terra); height: 2px; }
-    .reveal .slide-number { font-size: 10px; color: var(--rule); background: none; bottom: 8px; left: 12px; right: auto; }
+    .reveal .slide-number { font-size: 13px; color: var(--muted); background: none; bottom: 8px; left: 12px; right: auto; font-family: 'Inter', sans-serif; font-weight: 600; }
 
     /* ════════════════════════════════════════════════════
        SPECIAL SLIDES
@@ -918,37 +918,36 @@
   <h2>Hierarchy develops one thing: the ability to revise beliefs when evidence demands it</h2>
   <hr class="rule" />
   <div class="two-col" style="margin-top:.2em; align-items:flex-start">
-    <div class="col wider" style="position:relative; height:48vh">
+    <div class="col wider" style="position:relative; height:42vh">
       <img src="figures/hier_dim_causal.png" alt="Causal Reasoning by tier"
-           style="max-height:48vh; width:100%; object-fit:contain; position:absolute; top:0; left:0"
+           style="max-height:42vh; width:100%; object-fit:contain; position:absolute; top:0; left:0"
            class="fragment fade-in-then-out" data-fragment-index="1" />
       <img src="figures/hier_dim_evidence.png" alt="Evidence Evaluation by tier"
-           style="max-height:48vh; width:100%; object-fit:contain; position:absolute; top:0; left:0"
+           style="max-height:42vh; width:100%; object-fit:contain; position:absolute; top:0; left:0"
            class="fragment fade-in-then-out" data-fragment-index="2" />
       <img src="figures/hier_dim_adaptive.png" alt="Adaptive Learning by tier"
-           style="max-height:48vh; width:100%; object-fit:contain; position:absolute; top:0; left:0"
+           style="max-height:42vh; width:100%; object-fit:contain; position:absolute; top:0; left:0"
            class="fragment fade-in" data-fragment-index="3" />
     </div>
-    <div class="col narrow" style="display:flex; flex-direction:column; gap:.5em; justify-content:flex-start; padding-top:.2em">
-      <div class="delta fragment fade-up" data-fragment-index="1" style="padding:.6em .8em">
+    <div class="col narrow" style="display:flex; flex-direction:column; gap:.3em; justify-content:flex-start; padding-top:.1em">
+      <div class="delta fragment fade-up" data-fragment-index="1" style="padding:.45em .7em">
         <div class="delta-lbl">Causal Reasoning</div>
-        <div class="delta-n" style="font-size:1.8em">Δ = .07***</div>
-        <div class="delta-sub" style="font-size:.60em; margin-top:.15em">Top vs. Frontline · monotonic gradient</div>
+        <div class="delta-n" style="font-size:1.6em">Δ = .07***</div>
+        <div class="delta-sub" style="font-size:.58em; margin-top:.1em">Top vs. Frontline · monotonic gradient</div>
       </div>
-      <div class="delta minor fragment fade-up" data-fragment-index="2" style="padding:.6em .8em">
+      <div class="delta minor fragment fade-up" data-fragment-index="2" style="padding:.45em .7em">
         <div class="delta-lbl" style="color:var(--teal)">Evidence Evaluation</div>
-        <div class="delta-n" style="font-size:1.8em; color:var(--teal)">Δ = .02 n.s.</div>
-        <div class="delta-sub" style="font-size:.60em; margin-top:.15em">Top vs. Frontline · p = .31 · <strong>flat</strong>, evidence-seeking is the same at all levels</div>
+        <div class="delta-n" style="font-size:1.6em; color:var(--teal)">Δ = .02 n.s.</div>
+        <div class="delta-sub" style="font-size:.58em; margin-top:.1em">Top vs. Frontline · p = .31 · <strong>flat</strong></div>
       </div>
-      <div class="delta fragment fade-up" data-fragment-index="3" style="padding:.6em .8em; border-top-width:5px">
+      <div class="delta fragment fade-up" data-fragment-index="3" style="padding:.45em .7em; border-top-width:5px">
         <div class="delta-lbl">Adaptive Learning</div>
-        <div class="delta-n" style="font-size:2.2em">Δ = .19***</div>
-        <div class="delta-sub" style="font-size:.60em; margin-top:.15em">Top vs. Frontline · <strong>strongest gradient by far</strong></div>
+        <div class="delta-n" style="font-size:2em">Δ = .19***</div>
+        <div class="delta-sub" style="font-size:.58em; margin-top:.1em">Top vs. Frontline · <strong>strongest gradient by far</strong><br><span style="color:var(--muted); font-style:italic">AL–EE gap (Δ = .15, p &lt; .001) validates construct distinctiveness</span></div>
       </div>
-      <p class="fragment fade-up" data-fragment-index="4" style="font-size:.60em; color:var(--muted); margin-top:.3em; font-style:italic">AL–EE dissociation (Δ = .15, p &lt; .001), also validates construct distinctiveness.</p>
     </div>
   </div>
-  <p class="bridge fragment fade-up" data-fragment-index="4">Does this reflect selection, the best rising to the top?</p>
+  <p class="bridge fragment fade-up" data-fragment-index="4" style="margin-top:.4em">Does this reflect selection, with the best rising to the top?</p>
   <div class="snav">
     <span class="s">Motivation</span><span class="sep">·</span>
     <span class="s">Construct</span><span class="sep">·</span>
