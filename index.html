@@ -444,30 +444,77 @@
 </section>
 
 <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-     SLIDE 1 · WHAT KIND OF PAPER IS THIS?
+     SLIDE 1 · OPENING — MOTIVATION + GAP + CONTRIBUTIONS
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
 <section>
-  <div class="label">Orientation</div>
-  <h2>First validated SDM instrument — 24 items — deployed to 9,458 managers in 61 firms</h2>
+  <div class="label">Motivation · Construct</div>
+  <h2>Experiments prove SDM works — but no instrument exists to measure it in real organizations</h2>
   <hr class="rule" />
-  <div class="steps" style="gap:1.3em; margin-top:1.2em">
-    <div class="step fragment fade-up">
-      <div class="step-n" style="font-size:1.4em; color:var(--terra)">1</div>
-      <div class="step-t" style="font-size:.95em"><strong>We built a 24-item survey instrument</strong> — the first validated tool to measure scientific decision-making in managers at field scale.</div>
-    </div>
-    <div class="step fragment fade-up">
-      <div class="step-n" style="font-size:1.4em; color:var(--navy2)">2</div>
-      <div class="step-t" style="font-size:.95em"><strong>We deployed it to 9,458 managers across 61 firms</strong> — five hierarchical levels, from CEOs to frontline analysts.</div>
-    </div>
-    <div class="step fragment fade-up">
-      <div class="step-n" style="font-size:1.4em; color:var(--teal)">3</div>
-      <div class="step-t" style="font-size:.95em"><strong>We found patterns that don't have obvious explanations</strong> — the variation is structured, but not by the things you would expect.</div>
-    </div>
-    <div class="step fragment fade-up">
-      <div class="step-n" style="font-size:1.4em; color:var(--navy)">4</div>
-      <div class="step-t" style="font-size:.95em"><strong>For the first time, scientific reasoning in managers is observable at scale</strong> — and it turns out to be something organizations cannot read from org charts or CVs.</div>
-    </div>
+
+  <div style="position:relative; height:12em; margin-top:.75em">
+
+    <!-- ── PANEL A: context + gap — starts visible, fades out at step 3 ── -->
+    <div class="fragment fade-out" data-fragment-index="3"
+         style="position:absolute; inset:0">
+
+      <!-- Beat 1: what SDM is + RCT evidence (fades in at step 1) -->
+      <div class="fragment fade-up" data-fragment-index="1">
+        <div class="two-col" style="gap:1.4em; align-items:flex-start; margin-bottom:.75em">
+          <div style="border-left:3px solid var(--terra); padding:.2em 0 .2em .75em">
+            <p style="font-size:.72em; color:var(--navy2); font-weight:600; line-height:1.55; margin:0 0 .3em">
+              <strong>SDM</strong> — structured causal reasoning, evidence evaluation, and belief updating to navigate uncertainty under real-world constraints.
+            </p>
+            <p style="font-size:.63em; color:var(--muted); line-height:1.4; margin:0">
+              Randomized trials confirm: SDM training improves decision quality and organizational learning &nbsp;·&nbsp; Camuffo et al. (2020, 2024)
+            </p>
+          </div>
+          <div class="stats" style="gap:.55em">
+            <div class="stat">
+              <div class="n">N = 462</div>
+              <div class="lbl">entrepreneurs trained in SDM vs. control — RCT across multiple industries</div>
+            </div>
+            <div class="stat alt">
+              <div class="n">N = 759</div>
+              <div class="lbl">replication — SDM firms show higher survival and revenue growth</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Beat 2: the gap (fades in at step 2) -->
+      <div class="fragment fade-up" data-fragment-index="2">
+        <div style="background:var(--navy); padding:.7em 1.2em; display:flex; align-items:center; gap:.9em">
+          <div style="font-family:'Playfair Display',serif; font-size:1.8em; color:var(--terra); font-weight:700; flex-shrink:0; line-height:1">×</div>
+          <p style="font-size:.75em; color:#fff; margin:0; line-height:1.6">
+            <strong style="color:var(--terra)">But:</strong> this evidence comes entirely from controlled experiments.
+            <strong style="color:#fff">No instrument exists to measure SDM in real organizations</strong> — at scale, without experimental manipulation.
+          </p>
+        </div>
+      </div>
+
+    </div><!-- /panel A -->
+
+    <!-- ── PANEL B: contributions — fades in at step 3 ── -->
+    <div class="fragment fade-up" data-fragment-index="3"
+         style="position:absolute; inset:0">
+      <div class="two-col" style="gap:1.4em; align-items:stretch">
+        <div style="border-top:4px solid var(--terra); padding:1em 1.1em; background:rgba(255,255,255,.55)">
+          <div style="font-size:.58em; font-weight:700; color:var(--terra); text-transform:uppercase; letter-spacing:.10em; margin-bottom:.5em">C1 · Instrument</div>
+          <p style="font-size:.82em; color:var(--navy); margin:0; line-height:1.6">
+            24-item formative scale — three dimensions — <span style="color:var(--terra); font-weight:600">Causal Reasoning</span> · <span style="color:var(--teal); font-weight:600">Evidence Evaluation</span> · <span style="color:var(--navy2); font-weight:600">Adaptive Learning</span> — validated across five complementary criteria
+          </p>
+        </div>
+        <div style="border-top:4px solid var(--navy2); padding:1em 1.1em; background:rgba(255,255,255,.55)">
+          <div style="font-size:.58em; font-weight:700; color:var(--navy2); text-transform:uppercase; letter-spacing:.10em; margin-bottom:.5em">C2 · Field patterns</div>
+          <p style="font-size:.82em; color:var(--navy); margin:0; line-height:1.6">
+            9,458 managers · 61 firms · 5 hierarchical levels — SDM predicts decision quality (r = .175***), and its organizational distribution is not what the org chart would suggest
+          </p>
+        </div>
+      </div>
+    </div><!-- /panel B -->
+
   </div>
+
   <div class="snav">
     <span class="s on">Motivation</span><span class="sep">·</span>
     <span class="s">Construct</span><span class="sep">·</span>
@@ -476,88 +523,14 @@
     <span class="s">Discussion</span>
   </div>
   <aside class="notes">
-    Main message: orient the audience before anything technical — they need to know why they should care.
-    Most likely question: "Why does measuring SDM matter if we already have training studies?"
-    One-sentence answer: "Training studies tell us that SDM can be induced — this instrument tells us whether and how much managers already practice it, which opens up observational research that experiments alone cannot provide."
+    Three beats: (1) flash what SDM is + the RCT evidence from past literature — Camuffo et al. trained N=462 entrepreneurs, replicated at N=759. SDM training improves survival, revenue, and learning. This is fast — the lab knows this. (2) The gap: these results require experiments. We have no field instrument. (3) Context disappears — land on the two contributions: the 24-item scale (name the three dimensions: CR, EE, AL) and the field deployment to 9,458 managers.
+
+    CRITICAL: The d=1.40 and d=2.09 numbers are from OUR nudge experiment (validation criterion 3), NOT from past RCT literature. Do not confuse them here. The RCT literature reports firm-level outcomes (survival, revenue); our nudge experiment reports instrument sensitivity (scale scores respond to priming). The d-values belong on the experiment slide, not this one.
   </aside>
 </section>
 
 <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-     SLIDE 2 · MOTIVATION
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
-<section>
-  <div class="label">Motivation</div>
-  <h2>Scientific Decision-Making matters — but we have no instrument to measure it at scale</h2>
-  <hr class="rule" />
-  <p style="font-size:.76em; color:var(--navy2); margin:.55em 0 1em; border-left:3px solid var(--terra); padding-left:.65em; line-height:1.5"><strong>SDM</strong> is the structured use of causal reasoning, evidence evaluation, and belief updating to navigate uncertainty — the cognitive practices that separate rigorous from intuitive decision-making.</p>
-  <div class="steps" style="gap:1.2em; margin-top:.99em">
-    <div class="step">
-      <div class="step-n" style="color:var(--teal); font-size:1.5em">✓</div>
-      <div class="step-t" style="font-size:1.1em">
-        <strong style="color:var(--navy)">SDM training improves decision quality and organizational learning.</strong>
-        <span style="display:block; margin-top:.35em; font-size:.88em; color:var(--muted); font-style:italic">Camuffo et al. (2020) &nbsp;·&nbsp; Camuffo et al. (2024) &nbsp;·&nbsp; Zellweger &amp; Zenger (2023)</span>
-      </div>
-    </div>
-    <div class="step fragment fade-up">
-      <div class="step-n" style="color:var(--terra); font-size:1.5em">×</div>
-      <div class="step-t" style="font-size:1.1em">
-        <strong style="color:var(--navy)">The field lacks an instrument to assess SDM outside experimental settings.</strong>
-      </div>
-    </div>
-    <div class="step fragment fade-up">
-      <div class="step-n" style="color:var(--navy2); font-size:1.5em">→</div>
-      <div class="step-t" style="font-size:1.1em">
-        <strong style="color:var(--navy)">We develop and validate a 24-item SDM survey, then deploy it at field scale.</strong>
-      </div>
-    </div>
-  </div>
-  <div class="snav">
-    <span class="s on">Motivation</span><span class="sep">·</span>
-    <span class="s">Construct</span><span class="sep">·</span>
-    <span class="s">Validation</span><span class="sep">·</span>
-    <span class="s">Application</span><span class="sep">·</span>
-    <span class="s">Discussion</span>
-  </div>
-</section>
-
-<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-     SLIDE 3 · FINDINGS PREVIEW
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
-<section>
-  <div class="label">Motivation</div>
-  <h2>SDM predicts decision quality (r = .175***) and follows the hierarchy — but not through the mechanisms you would expect</h2>
-  <hr class="rule" />
-  <div class="two-col" style="gap:1.4em; margin-bottom:1.2em">
-    <div class="fragment fade-up" style="border-top:4px solid var(--terra); padding:1em 1.1em; background:rgba(255,255,255,.55); border-radius:0 0 6px 6px">
-      <div style="font-size:.60em; font-weight:700; color:var(--terra); text-transform:uppercase; letter-spacing:.10em; margin-bottom:.5em">C1 · Instrument</div>
-      <p style="font-size:.84em; line-height:1.55; margin:0; color:var(--navy)">24-item formative scale · 3 dimensions · validated across 5 complementary criteria · deployed at scale</p>
-    </div>
-    <div class="fragment fade-up" style="border-top:4px solid var(--navy2); padding:1em 1.1em; background:rgba(255,255,255,.55); border-radius:0 0 6px 6px">
-      <div style="font-size:.60em; font-weight:700; color:var(--navy2); text-transform:uppercase; letter-spacing:.10em; margin-bottom:.5em">C2 · Field deployment</div>
-      <p style="font-size:.84em; line-height:1.55; margin:0; color:var(--navy)">9,458 managers · 5 hierarchical levels · individual and firm-level outcomes</p>
-    </div>
-  </div>
-  <div style="display:flex; flex-direction:column; gap:.7em">
-    <div class="fragment fade-up" style="display:flex; align-items:baseline; gap:.8em">
-      <span style="font-size:.58em; font-weight:700; color:var(--terra); text-transform:uppercase; letter-spacing:.09em; white-space:nowrap">What we establish</span>
-      <p style="font-size:.80em; line-height:1.55; margin:0; color:var(--navy)">SDM predicts decision quality — managers who reason more scientifically make better decisions, and this signal holds at the firm level too.</p>
-    </div>
-    <div class="fragment fade-up" style="display:flex; align-items:baseline; gap:.8em">
-      <span style="font-size:.58em; font-weight:700; color:var(--navy2); text-transform:uppercase; letter-spacing:.09em; white-space:nowrap">What we're learning</span>
-      <p style="font-size:.80em; line-height:1.55; margin:0; color:var(--navy)">The variation within organizations is not random — but it is not explained by where someone sits or how long they have been there. That is the puzzle we are beginning to map.</p>
-    </div>
-  </div>
-  <div class="snav">
-    <span class="s on">Motivation</span><span class="sep">·</span>
-    <span class="s">Construct</span><span class="sep">·</span>
-    <span class="s">Validation</span><span class="sep">·</span>
-    <span class="s">Application</span><span class="sep">·</span>
-    <span class="s">Discussion</span>
-  </div>
-</section>
-
-<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-     SLIDE 4 · CONSTRUCT — DEFINITION + DIMENSIONS
+     SLIDE 2 · CONSTRUCT — DEFINITION + DIMENSIONS
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
 <section>
   <div class="label">Construct</div>
@@ -583,7 +556,7 @@
   </div>
   <div class="finding-box fragment fade-up" style="margin-top:.75em">
     <div class="fb-label">Why non-interchangeable matters</div>
-    <div class="fb-text">A manager who runs rigorous experiments but never revises their theory when results are surprising is <strong>not practicing SDM</strong>. Evidence Evaluation without Adaptive Learning is not scientific decision-making. Each dimension is necessary; none substitutes for the others.</div>
+    <div class="fb-text">A manager who runs rigorous experiments but never revises their theory when results are surprising is <strong>not practicing SDM</strong>. Evidence Evaluation without Adaptive Learning is not scientific decision-making.</div>
   </div>
   <div class="snav">
     <span class="s">Motivation</span><span class="sep">·</span>
@@ -593,14 +566,14 @@
     <span class="s">Discussion</span>
   </div>
   <aside class="notes">
-    Main message: the three dimensions are conceptually distinct and theoretically necessary — this is not arbitrary subdivision.
+    Main message: the three dimensions are conceptually distinct and theoretically necessary.
     Most likely question: "Aren't EE and AL basically the same thing?"
-    One-sentence answer: "CFA confirms they are statistically distinct (Δχ²=131.86, p&lt;.001), and field deployment shows they follow completely different patterns across the organizational hierarchy — AL differentiates tiers strongly while EE does not at all."
+    One-sentence answer: "CFA confirms they are statistically distinct (Δχ²=131.86, p&lt;.001), and field deployment shows they follow completely different patterns across the hierarchy — AL differentiates tiers strongly while EE does not at all."
   </aside>
 </section>
 
 <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-     SLIDE 5 · INSTRUMENT DEVELOPMENT 40→24
+     SLIDE 3 · INSTRUMENT DEVELOPMENT 40→24
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
 <section>
   <div class="label">Construct</div>
@@ -757,11 +730,11 @@
     The instrument works. Now — what does it reveal when deployed at scale in real organizations?
   </p>
   <div class="app-links" style="margin-top:.5em; display:flex; flex-wrap:wrap; gap:.35em">
-    <a class="app-link" onclick="navTo(20)">C1 → Expert review protocol</a>
-    <a class="app-link" onclick="navTo(22)">C2 → VIF table — all 24 items</a>
-    <a class="app-link" onclick="navTo(23)">C3 → Full experiment results</a>
-    <a class="app-link" onclick="navTo(21)">C4 → CFA specs</a>
-    <a class="app-link" onclick="navTo(29)">C5 → Vignette OLS table</a>
+    <a class="app-link" onclick="navTo(19)">C1 → Expert review protocol</a>
+    <a class="app-link" onclick="navTo(21)">C2 → VIF table — all 24 items</a>
+    <a class="app-link" onclick="navTo(22)">C3 → Full experiment results</a>
+    <a class="app-link" onclick="navTo(20)">C4 → CFA specs</a>
+    <a class="app-link" onclick="navTo(28)">C5 → Vignette OLS table</a>
   </div>
   <div class="snav">
     <span class="s">Motivation</span><span class="sep">·</span>
@@ -782,8 +755,9 @@
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
 <section>
   <div class="label">Validation · Strongest Evidence</div>
-  <h2>A framing nudge shifts SDM scores by d = 1.40 — the instrument measures how you reason, not who you are</h2>
+  <h2>The clearest test: can we move SDM scores by changing how managers think?</h2>
   <hr class="rule" />
+  <p style="font-size:.80em; color:var(--navy); font-style:italic; margin-bottom:.6em">462 managers randomly assigned to reason scientifically, intuitively, or normally — then completed the SDM survey.</p>
   <div class="two-col" style="align-items:start; margin-top:.3em">
     <div class="col narrow">
       <p style="font-size:.64em; margin-bottom:.7em"><strong>N = 462 practicing managers</strong> · Prolific (354) + MBA alumni (48) + Italian firm managers (60) · randomly assigned to 3 conditions</p>
@@ -827,7 +801,7 @@
     </div>
   </div>
   <div class="app-links" style="margin-top:.4em">
-    <a class="app-link" onclick="navTo(23)">→ App C: Experiment full results (item-level &amp; subsample tables)</a>
+    <a class="app-link" onclick="navTo(22)">→ App C: Experiment full results (item-level &amp; subsample tables)</a>
   </div>
   <div class="snav">
     <span class="s">Motivation</span><span class="sep">·</span>
@@ -937,7 +911,7 @@
   <p style="font-size:.54em; color:var(--muted); font-style:italic; margin-top:.45em">Upper Management tier ICC = 5.01% — at threshold; overall 1.1% reflects all tiers.</p>
   <p class="bridge fragment fade-up">Is that within-firm variance random — or does it follow a structure?</p>
   <div class="app-links">
-    <a class="app-link" onclick="navTo(24)">→ App D: ICC robustness (ANOVA / REML / LOFO / bootstrap)</a>
+    <a class="app-link" onclick="navTo(23)">→ App D: ICC robustness (ANOVA / REML / LOFO / bootstrap)</a>
   </div>
   <div class="snav">
     <span class="s">Motivation</span><span class="sep">·</span>
@@ -982,7 +956,7 @@
       </div>
       <p class="bridge fragment fade-up">Is the gradient uniform — or do some dimensions drive it more than others?</p>
       <div class="app-links" style="margin-top:.4em">
-        <a class="app-link" onclick="navTo(25)">→ Appendix: Full hierarchy regressions</a>
+        <a class="app-link" onclick="navTo(24)">→ Appendix: Full hierarchy regressions</a>
       </div>
     </div>
   </div>
@@ -1173,7 +1147,7 @@
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
 <section>
   <div class="label">Application · The Payoff</div>
-  <h2>Top SDM quintile answers 10 pp more accurately than the bottom — regardless of hierarchical level</h2>
+  <h2>Yes — and your SDM score predicts decisions better than your title</h2>
   <hr class="rule" />
   <div class="two-col" style="margin-top:.6em; align-items:flex-start; gap:1.6em">
     <div class="col wider" style="display:flex; flex-direction:column; align-items:center">
@@ -1201,7 +1175,7 @@
     </div>
   </div>
   <div class="app-links">
-    <a class="app-link" onclick="navTo(29)">→ App: Vignette regression table (5 specifications)</a>
+    <a class="app-link" onclick="navTo(28)">→ App: Vignette regression table (5 specifications)</a>
   </div>
   <div class="snav">
     <span class="s">Motivation</span><span class="sep">·</span>
@@ -1260,7 +1234,7 @@
     </div>
   </div>
   <div class="app-links">
-    <a class="app-link" onclick="navTo(27)">→ App E: Firm-level OLS full table</a>
+    <a class="app-link" onclick="navTo(26)">→ App E: Firm-level OLS full table</a>
   </div>
   <div class="snav">
     <span class="s">Motivation</span><span class="sep">·</span>
@@ -1294,7 +1268,7 @@
     </div>
     <div class="q">
       <div class="q-tag" style="color:var(--terra)">Convergent</div>
-      <div class="q-body"><strong>AOT and NFC not administered</strong> — the two closest established constructs were not collected. Proxies are consistent with theory but do not substitute. <a class="app-link" style="vertical-align:middle" onclick="navTo(28)">→ App I: proposed fix</a></div>
+      <div class="q-body"><strong>AOT and NFC not administered</strong> — the two closest established constructs were not collected. Proxies are consistent with theory but do not substitute. <a class="app-link" style="vertical-align:middle" onclick="navTo(27)">→ App I: proposed fix</a></div>
     </div>
     <div class="q amber">
       <div class="q-tag">Sample</div>
@@ -1359,43 +1333,43 @@
   <p style="font-size:.66em; color:var(--muted)">Ask me for any of these during Q&amp;A.</p>
   <p style="font-size:.60em; color:var(--muted); margin-bottom:.5em">Paper appendices A–E · supplementary backup slides below</p>
   <div class="app-grid">
-    <div class="app-item" onclick="navTo(20)">
+    <div class="app-item" onclick="navTo(19)">
       <div class="app-id">A</div>
       <div class="app-text"><strong>Survey Instrument (App A)</strong>Item list · expert review protocol (§A.3) · elimination criteria · Tables A1–A3</div>
     </div>
-    <div class="app-item" onclick="navTo(21)">
+    <div class="app-item" onclick="navTo(20)">
       <div class="app-id">B</div>
       <div class="app-text"><strong>Psychometric Details (App B)</strong>CFA specifications · fit indices · interfactor correlations · Tables B.1–B.5</div>
     </div>
-    <div class="app-item" onclick="navTo(23)">
+    <div class="app-item" onclick="navTo(22)">
       <div class="app-id">C</div>
       <div class="app-text"><strong>Experimental Priming (App C)</strong>Results by subsample · by SDM component · item-level effects · prime texts · Tables C.1–C.5</div>
     </div>
-    <div class="app-item" onclick="navTo(24)">
+    <div class="app-item" onclick="navTo(23)">
       <div class="app-id">D</div>
       <div class="app-text"><strong>ICC Robustness (App D)</strong>ANOVA / REML / Conditional REML · LOFO sensitivity · bootstrap CIs · Tables D1.1–D1.4</div>
     </div>
-    <div class="app-item" onclick="navTo(27)">
+    <div class="app-item" onclick="navTo(26)">
       <div class="app-id">E</div>
       <div class="app-text"><strong>Organizational Analyses (App E)</strong>Firm-level OLS · mean SDM → collective accuracy · descriptive statistics · Table E.1</div>
     </div>
-    <div class="app-item" onclick="navTo(22)" style="opacity:.75">
+    <div class="app-item" onclick="navTo(21)" style="opacity:.75">
       <div class="app-id" style="background:var(--navy2)">—</div>
       <div class="app-text"><strong>VIF — indicator non-redundancy</strong>All 24 items · tolerance values · <em>Main paper, Table 3</em></div>
     </div>
-    <div class="app-item" onclick="navTo(25)" style="opacity:.75">
+    <div class="app-item" onclick="navTo(24)" style="opacity:.75">
       <div class="app-id" style="background:var(--navy2)">—</div>
       <div class="app-text"><strong>Hierarchy OLS — full table</strong>4 outcomes × 5 tiers · firm FE · <em>Main paper, §5</em></div>
     </div>
-    <div class="app-item" onclick="navTo(26)" style="opacity:.75">
+    <div class="app-item" onclick="navTo(25)" style="opacity:.75">
       <div class="app-id" style="background:var(--navy2)">—</div>
       <div class="app-text"><strong>SDM correlates (partial convergent)</strong>Education · tenure · STEM · vignette · tier · <em>Main paper, §4–5</em></div>
     </div>
-    <div class="app-item" onclick="navTo(28)" style="opacity:.75">
+    <div class="app-item" onclick="navTo(27)" style="opacity:.75">
       <div class="app-id" style="background:var(--navy2)">—</div>
       <div class="app-text"><strong>AOT + NFC plan</strong>Proposed subsample design · expected correlations · <em>Future work</em></div>
     </div>
-    <div class="app-item" onclick="navTo(29)" style="opacity:.75">
+    <div class="app-item" onclick="navTo(28)" style="opacity:.75">
       <div class="app-id" style="background:var(--navy2)">—</div>
       <div class="app-text"><strong>Vignette OLS table + figure</strong>5 progressive specs · no FE / firm FE · subdimension r · quintile figure · <em>Main paper, §5</em></div>
     </div>
@@ -1428,7 +1402,7 @@
 </section>
 
 <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-     APP A · EXPERT REVIEW (index 20)
+     APP A · EXPERT REVIEW (index 19)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
 <section>
   <a class="app-back" onclick="navBack()">← back</a>
@@ -1458,7 +1432,7 @@
 </section>
 
 <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-     APP B · CFA SPECIFICATIONS (index 21)
+     APP B · CFA SPECIFICATIONS (index 20)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
 <section>
   <a class="app-back" onclick="navBack()">← back</a>
@@ -1482,7 +1456,7 @@
 </section>
 
 <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-     APP C · VIF TABLE (index 22)
+     APP C · VIF TABLE (index 21)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
 <section>
   <a class="app-back" onclick="navBack()">← back</a>
@@ -1513,7 +1487,7 @@
 </section>
 
 <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-     APP D · EXPERIMENT FULL RESULTS (index 23)
+     APP D · EXPERIMENT FULL RESULTS (index 22)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
 <section>
   <a class="app-back" onclick="navBack()">← back</a>
@@ -1537,7 +1511,7 @@
 </section>
 
 <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-     APP E · ICC ROBUSTNESS (index 24)
+     APP E · ICC ROBUSTNESS (index 23)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
 <section>
   <a class="app-back" onclick="navBack()">← back</a>
@@ -1561,7 +1535,7 @@
 </section>
 
 <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-     APP F · HIERARCHY REGRESSIONS (index 25)
+     APP F · HIERARCHY REGRESSIONS (index 24)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
 <section>
   <a class="app-back" onclick="navBack()">← back</a>
@@ -1592,7 +1566,7 @@
 </section>
 
 <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-     APP G · SDM CORRELATES (index 26)
+     APP G · SDM CORRELATES (index 25)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
 <section>
   <a class="app-back" onclick="navBack()">← back</a>
@@ -1615,7 +1589,7 @@
 </section>
 
 <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-     APP H · FIRM-LEVEL OLS (index 27)
+     APP H · FIRM-LEVEL OLS (index 26)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
 <section>
   <a class="app-back" onclick="navBack()">← back</a>
@@ -1639,7 +1613,7 @@
 </section>
 
 <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-     APP I · AOT + NFC PLAN (index 28)
+     APP I · AOT + NFC PLAN (index 27)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
 <section>
   <a class="app-back" onclick="navBack()">← back</a>
@@ -1677,7 +1651,7 @@
 </section>
 
 <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-     APP J · VIGNETTE OLS TABLE + FIGURE (index 29)
+     APP J · VIGNETTE OLS TABLE + FIGURE (index 28)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
 <section>
   <a class="app-back" onclick="navBack()">← back</a>
@@ -1739,7 +1713,7 @@
   function navBack() {
     var state = window._navStack.pop();
     if (state) { Reveal.slide(state.h, state.v, -1); }
-    else { Reveal.slide(19); } // fallback: appendix overview
+    else { Reveal.slide(17); } // fallback: appendix overview
   }
 </script>
 </body>
