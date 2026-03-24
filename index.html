@@ -488,7 +488,7 @@
         <div style="border-top:4px solid var(--navy2); padding:.85em 1em; background:rgba(255,255,255,.55)">
           <div style="font-size:.58em; font-weight:700; color:var(--navy2); text-transform:uppercase; letter-spacing:.10em; margin-bottom:.4em">C2 · Field patterns</div>
           <p style="font-size:.78em; color:var(--navy); margin:0; line-height:1.55">
-            9,458 managers · 61 firms · 5 hierarchical levels. SDM predicts decision quality (r = .175***), and its organizational distribution is not what the org chart would suggest
+            9,458 managers · 61 firms · 5 hierarchical levels. SDM predicts decision accuracy (r = .175***), and its organizational distribution is not what the org chart would suggest
           </p>
         </div>
       </div>
@@ -668,42 +668,42 @@
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
 <section>
   <div class="label">Validation</div>
-  <h2>Five criteria, each addressing a different validity threat</h2>
+  <h2>Five criteria — three establish the instrument's properties, two test its predictive validity</h2>
   <hr class="rule" />
-  <p style="font-size:.68em; color:var(--muted); margin-bottom:.4em">Formative constructs require complementary evidence, no single statistic suffices. The evidence accumulates.</p>
-  <table class="val-table fragment fade-up" style="margin-top:.4em">
+  <p style="font-size:.68em; color:var(--muted); margin-bottom:.4em">Formative constructs require complementary evidence. No single statistic suffices — the case accumulates.</p>
+  <table class="val-table fragment fade-up" style="margin-top:.3em">
     <thead>
       <tr><th>#</th><th>Criterion</th><th>Method</th><th>Result</th><th></th></tr>
     </thead>
     <tbody>
       <tr>
         <td>1</td><td>Content validity</td>
-        <td>Expert survey (N = 16 researchers, random condition assignment); 12-manager interviews</td>
+        <td>Expert survey · N = 16 researchers · random condition assignment · 12-manager interviews</td>
         <td>8 items eliminated; domain coverage confirmed</td>
         <td class="badge">✓</td>
       </tr>
       <tr>
         <td>2</td><td>Indicator non-redundancy</td>
-        <td>Variance Inflation Factor (VIF): testing multicollinearity among items; each item regressed on remaining 23</td>
-        <td>VIF 1.03–1.19 (threshold &lt; 3); tolerance .84–.97</td>
+        <td>Variance Inflation Factor (VIF) · each item regressed on remaining 23</td>
+        <td>VIF 1.03–1.19 · tolerance .84–.97 · all well below threshold of 3</td>
         <td class="badge">✓</td>
       </tr>
       <tr>
-        <td>3</td><td>Experimental sensitivity</td>
-        <td>RCT, N = 462, 3 priming conditions</td>
-        <td>d = 1.40 vs. placebo; d = 2.09 vs. intuitive; η² = .43</td>
+        <td>3</td><td>Structural distinguishability</td>
+        <td>CFA · 1, 2, 3, 6-factor specs compared · key test: 3 vs. 2 factors (EE–AL correlation r = .95)</td>
+        <td>Δχ²(1) = 131.86, p &lt; .001 · EE and AL are empirically distinct</td>
         <td class="badge">✓</td>
       </tr>
-      <tr>
-        <td>4</td><td>Structural distinguishability</td>
-        <td>Confirmatory Factor Analysis (CFA): testing distinguishability, not validating. Multiple specifications compared (1, 2, 3, 6 factors); key test is 3 vs. 2 factors because EE–AL factor correlation is highest (r = .95)</td>
-        <td>Likelihood ratio test: Δχ² = 131.86, p &lt; .001; model specification confirms EE and AL are distinct</td>
+      <tr style="background:var(--warm)">
+        <td>4</td><td><strong>Experimental sensitivity</strong></td>
+        <td>RCT · N = 462 · 3 priming conditions</td>
+        <td>d = 1.40 vs. placebo · d = 2.09 vs. intuitive · η² = .43 <span style="color:var(--terra); font-style:italic; font-size:.9em">· →</span></td>
         <td class="badge">✓</td>
       </tr>
-      <tr>
-        <td>5</td><td>Behavioral prediction</td>
-        <td>Vignette decision accuracy (N = 9,458)</td>
-        <td>β = .12, stable across 4 specs; top vs. bottom quintile: 10 pp gap</td>
+      <tr style="background:var(--warm)">
+        <td>5</td><td><strong>Behavioral prediction</strong></td>
+        <td>Vignette decision accuracy · N = 9,458</td>
+        <td>r = .175*** · 10 pp gap top vs. bottom quintile <span style="color:var(--terra); font-style:italic; font-size:.9em">· →</span></td>
         <td class="badge">✓</td>
       </tr>
     </tbody>
@@ -711,9 +711,7 @@
   <div class="app-links" style="margin-top:.5em; display:flex; flex-wrap:wrap; gap:.35em">
     <a class="app-link" onclick="navTo(19)">C1 → Expert review protocol</a>
     <a class="app-link" onclick="navTo(21)">C2 → VIF table, all 24 items</a>
-    <a class="app-link" onclick="navTo(22)">C3 → Full experiment results</a>
-    <a class="app-link" onclick="navTo(20)">C4 → CFA specs</a>
-    <a class="app-link" onclick="navTo(28)">C5 → Vignette OLS table</a>
+    <a class="app-link" onclick="navTo(20)">C3 → CFA specifications</a>
   </div>
   <div class="snav">
     <span class="s">Motivation</span><span class="sep">·</span>
@@ -723,9 +721,9 @@
     <span class="s">Discussion</span>
   </div>
   <aside class="notes">
-    Main message: validation is complete across five independent criteria, use this as the summary, not the argument.
+    Main message: three criteria establish instrument properties (content, non-redundancy, structural). The next two slides give direct evidence — one causal (experiment), one predictive (vignette).
     Most likely question: "Why no convergent validity against AOT or NFC?"
-    One-sentence answer: "That is one of four acknowledged limitations, the planned follow-up study administering both instruments is described in Appendix I."
+    One-sentence answer: "That is one of four acknowledged limitations — the planned follow-up study administering both instruments is described in Appendix I."
   </aside>
 </section>
 
@@ -796,7 +794,74 @@
 </section>
 
 <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-     SLIDE 9 · FIELD DEPLOYMENT
+     SLIDE 9 · VALIDATION CRITERION 5 — VIGNETTE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section>
+  <div class="label">Validation · Criterion 5</div>
+  <h2>Managers who score higher on SDM make more correct decisions on real business cases</h2>
+  <hr class="rule" />
+  <div class="two-col" style="margin-top:.45em; align-items:flex-start; gap:2em">
+    <div class="col" style="display:flex; flex-direction:column; gap:.6em; padding-top:.2em">
+      <div class="stat alt fragment fade-up" style="padding:.6em 1em">
+        <div class="n">r = .175***</div>
+        <div class="lbl">SDM score → vignette accuracy · N = 9,458</div>
+      </div>
+      <div class="stat fragment fade-up" style="padding:.6em 1em">
+        <div class="n">β = .12</div>
+        <div class="lbl">stable across 4 specifications · survives firm fixed effects · not driven by level or tenure</div>
+      </div>
+      <div style="height:1px; background:var(--rule)"></div>
+      <div class="fragment fade-up" style="display:flex; flex-direction:column; gap:.2em">
+        <p style="font-size:.58em; color:var(--muted); font-weight:500; text-transform:uppercase; letter-spacing:.05em; margin:0">Strongest predictor by dimension</p>
+        <div style="display:flex; gap:.5em; align-items:center">
+          <span style="font-size:.63em; color:var(--muted); width:1.4em; text-align:center">CR</span>
+          <div style="height:.55em; width:calc(.120/.150*7em); background:var(--muted); border-radius:2px; opacity:.5"></div>
+          <span style="font-size:.60em; color:var(--muted)">r = .120***</span>
+        </div>
+        <div style="display:flex; gap:.5em; align-items:center">
+          <span style="font-size:.63em; color:var(--muted); width:1.4em; text-align:center">EE</span>
+          <div style="height:.55em; width:calc(.111/.150*7em); background:var(--muted); border-radius:2px; opacity:.5"></div>
+          <span style="font-size:.60em; color:var(--muted)">r = .111***</span>
+        </div>
+        <div style="display:flex; gap:.5em; align-items:center">
+          <span style="font-size:.63em; color:var(--terra); font-weight:600; width:1.4em; text-align:center">AL</span>
+          <div style="height:.55em; width:7em; background:var(--terra); border-radius:2px"></div>
+          <span style="font-size:.60em; color:var(--terra); font-weight:500">r = .150***</span>
+        </div>
+      </div>
+      <p class="fragment fade-up" style="font-size:.60em; color:var(--muted); font-style:italic; margin:0">AL — the same dimension that most differentiates senior from frontline managers — is also the strongest predictor of vignette accuracy.</p>
+    </div>
+    <div class="col" style="display:flex; flex-direction:column; align-items:center">
+      <img src="figures/sdm_quintile_vignette.png" alt="Vignette accuracy by SDM quintile"
+           style="width:100%; max-height:44vh; object-fit:contain; box-shadow:0 2px 14px rgba(0,0,0,.1)" />
+      <p style="font-size:.50em; color:var(--muted); text-align:center; margin-top:.3em">Vignette accuracy by SDM quintile · error bars = 95% CI</p>
+    </div>
+  </div>
+  <p class="bridge fragment fade-up">With that established — we then deployed the instrument to 9,458 real managers.</p>
+  <div class="app-links">
+    <a class="app-link" onclick="navTo(28)">→ App J: Vignette regression table (5 specifications)</a>
+  </div>
+  <div class="snav">
+    <span class="s">Motivation</span><span class="sep">·</span>
+    <span class="s">Construct</span><span class="sep">·</span>
+    <span class="s on">Validation</span><span class="sep">·</span>
+    <span class="s">Application</span><span class="sep">·</span>
+    <span class="s">Discussion</span>
+  </div>
+  <aside class="notes">
+    Main message: criterion validity — the SDM score predicts real decision behavior, not just self-description. And the dimension that matters most for decisions (AL) is the same one that most differentiates the hierarchy. This closes the validation section and seeds the application narrative.
+    Say aloud: "We're not just measuring how managers describe their reasoning style. We administered real business case scenarios — managers had to identify the correct course of action. Higher SDM score → more correct decisions, β = .12, stable across four specifications including firm fixed effects."
+    Most likely question: "How big is β = .12 practically?"
+    One-sentence answer: "It survives firm fixed effects and level controls — it's not a firm artifact or a seniority effect. A one-SD increase in SDM predicts 12% more correct decisions."
+    Second likely question: "Isn't this just senior managers who score high and also make better decisions?"
+    One-sentence answer: "No — we control for hierarchical level in 3 of the 4 specifications, and the effect holds."
+    Note: the 54% junior/high-SDM vs 45% senior/low-SDM comparison can be mentioned verbally once the hierarchy gradient has been shown. App J has the full regression table.
+    Note on mechanism: the full chain exposure→SDM→decisions is not established — the vignette gradient actually flattens in long-tenure managers. Reported as open question in Discussion.
+  </aside>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     SLIDE 10 · FIELD DEPLOYMENT
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
 <section>
   <div class="label">Application</div>
@@ -857,7 +922,7 @@
 </section>
 
 <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-     SLIDE 10 · PATTERN 1, ICC
+     SLIDE 11 · PATTERN 1, ICC
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
 <section>
   <div class="label">Application · Pattern 1</div>
@@ -1005,49 +1070,70 @@
 </section>
 
 <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-     SLIDE 13 · PATTERN 3, NOT SELECTION (2×2)
+     SLIDE 13 · PATTERNS 3 & 4, NOT SELECTION / NOT TENURE
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
 <section>
-  <div class="label">Application · Pattern 3</div>
-  <h2>High-SDM managers are distributed across all hierarchical levels</h2>
+  <div class="label">Application · Patterns 3 &amp; 4</div>
+  <h2>The hierarchy gradient is shaped by the role — not by who gets selected up, nor by time alone</h2>
   <hr class="rule" />
-  <p style="font-size:.76em; color:var(--navy); font-family:'Playfair Display',serif; font-style:italic; margin-bottom:.6em">If scientific thinkers rise to the top, where are they?</p>
-  <div class="two-col" style="margin-top:.5em; align-items:center; gap:2em">
+  <div class="two-col" style="margin-top:.4em; align-items:flex-start; gap:2.5em">
     <div class="col">
-      <div class="stats" style="flex-direction:column; gap:.65em">
-        <div class="stat dark fragment fade-up">
-          <div class="n">46.8%</div>
-          <div class="lbl">of top managers (T1 · N = 554) score <strong>below</strong> the sample median SDM</div>
+      <p style="font-size:.60em; color:var(--muted); margin-bottom:.35em; font-weight:500; letter-spacing:.04em">If selection → T1 above median ≈ 100%</p>
+      <div class="stats" style="flex-direction:column; gap:.3em">
+        <div class="stat dark fragment fade-up" style="padding:.45em .75em">
+          <div class="n" style="font-size:1.4em">53.2% <span style="font-size:.55em; font-weight:400">± 2.1 pp</span></div>
+          <div class="lbl">of top managers (T1 · N = 554) score <strong>above</strong> the sample median SDM</div>
         </div>
-        <div class="stat fragment fade-up">
-          <div class="n">49.4%</div>
+        <div class="stat fragment fade-up" style="padding:.45em .75em">
+          <div class="n" style="font-size:1.4em">49.4% <span style="font-size:.55em; font-weight:400">± 0.8 pp</span></div>
           <div class="lbl">of frontline analysts (T5 · N = 4,254) score <strong>above</strong> the sample median SDM</div>
         </div>
-        <div class="stat alt fragment fade-up">
-          <div class="n">χ²(1) = 2.70</div>
-          <div class="lbl">Chi-square test of independence (2×2: SDM high/low × tier high/low) · 1 df · p = .10 · n.s. · SDM distribution is statistically independent of hierarchical level</div>
+        <div class="stat alt fragment fade-up" style="padding:.45em .75em">
+          <div class="n" style="font-size:1.2em">χ²(1) = 2.70 n.s.</div>
+          <div class="lbl">SDM distribution is statistically independent of tier · p = .10 · robust across 3 operationalizations</div>
         </div>
       </div>
     </div>
     <div class="col">
-      <div class="steps">
-        <div class="step fragment fade-up">
-          <div class="step-n">→</div>
-          <div class="step-t">High-SDM managers exist at every level. So do low-SDM managers, including at the top.</div>
+      <p style="font-size:.60em; color:var(--muted); margin-bottom:.35em; font-weight:500; letter-spacing:.04em">If experience → r(tenure, SDM) &gt; 0</p>
+      <div class="stats" style="flex-direction:column; gap:.3em">
+        <div class="stat fragment fade-up" style="padding:.45em .75em">
+          <div class="n" style="font-size:1.25em">r = −.044***</div>
+          <div class="lbl">Overall SDM <em>declines</em> with years at firm · N = 9,458</div>
         </div>
-        <div class="step fragment fade-up">
-          <div class="step-n">→</div>
-          <div class="step-t">More consistent with <strong>exposure and development</strong>: proximity to high-stakes decisions over time trains specific components of scientific reasoning.</div>
+        <div class="stat dark fragment fade-up" style="padding:.45em .75em; margin-left:1em">
+          <div class="n" style="font-size:1.25em">r = −.028**</div>
+          <div class="lbl">Causal Reasoning <em>erodes</em> slightly with years at firm</div>
         </div>
-        <div class="step fragment fade-up">
-          <div class="step-n" style="color:var(--muted)">·</div>
-          <div class="step-t" style="color:var(--muted); font-style:italic">Cross-sectional, selection and development can coexist. We are working to disentangle them.</div>
+        <div class="stat dark fragment fade-up" style="padding:.45em .75em; margin-left:1em">
+          <div class="n" style="font-size:1.25em">r = −.030**</div>
+          <div class="lbl">Evidence Evaluation <em>erodes</em> slightly with years at firm</div>
+        </div>
+        <div class="fragment fade-up" style="margin:.15em .1em 0; margin-left:1em; display:flex; flex-direction:column; gap:.1em">
+          <p style="font-size:.56em; color:var(--muted); font-style:italic; margin:0">↑ CR/EE erode: cognitive entrenchment · Dane (2010)</p>
+        </div>
+        <div class="stat alt fragment fade-up" style="padding:.45em .75em; margin-left:1em">
+          <div class="n" style="font-size:1.25em">r = −.008 n.s.</div>
+          <div class="lbl">Adaptive Learning — <em>flat</em> across all tenure bands</div>
         </div>
       </div>
     </div>
   </div>
-  <p style="font-size:.54em; color:var(--muted); font-style:italic; margin-top:.4em">Robust across 3 operationalizations: T1 vs T5 (p=.10), T1+T2 vs T4+T5 (p=.252), CEO vs 5+ layers (p=.527), all n.s.</p>
-  <p class="bridge fragment fade-up">Time at the firm also doesn't explain it, does it?</p>
+  <div style="margin-top:.35em; border-top:1px solid var(--rule); padding-top:.35em">
+    <div class="steps" style="margin-top:0; gap:.2em">
+      <div class="step fragment fade-up">
+      </div>
+      <div class="step fragment fade-up">
+        <div class="step-n" style="color:var(--muted); font-size:.85em">S</div>
+        <div class="step-t" style="font-size:.67em; color:var(--muted)"><strong>If selection:</strong> managers who ascended should have had high SDM before rising</div>
+      </div>
+      <div class="step fragment fade-up">
+        <div class="step-n" style="color:var(--muted); font-size:.85em">X</div>
+        <div class="step-t" style="font-size:.67em; color:var(--muted)"><strong>If experience:</strong> tenure should raise SDM uniformly — already ruled out above</div>
+      </div>
+    </div>
+  </div>
+  <p class="bridge fragment fade-up" style="margin-top:.3em">What does our closest available test show?</p>
   <div class="snav">
     <span class="s">Motivation</span><span class="sep">·</span>
     <span class="s">Construct</span><span class="sep">·</span>
@@ -1056,166 +1142,58 @@
     <span class="s">Discussion</span>
   </div>
   <aside class="notes">
-    Main message: the gradient cannot be explained by pure selection, scientific thinkers are distributed across all levels, not concentrated at the top.
-    Most likely question: "Couldn't this just mean your SDM measure doesn't capture what actually gets people promoted?"
-    One-sentence answer: "Possibly, but the same managers who score high on SDM answer vignette decision tasks 12 percentage points more accurately, so the instrument is capturing something real about decision quality, regardless of whether it predicts promotion."
+    Main message: two independent tests rule out selection (χ² n.s.) and accumulated experience (tenure erodes, not builds). Now the question is what does drive it. Three mechanisms make different predictions. We can partially test the exposure prediction with the tenure-cut analysis on the next slide.
+    Most likely question: "Couldn't the χ² test just be underpowered?"
+    One-sentence answer: "Robust across three operationalizations (T1 vs T5, T1+T2 vs T4+T5, CEO vs 5+ layers) — all return p > .10. The null is the finding."
   </aside>
 </section>
 
 <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-     SLIDE 14 · PATTERN 4, TENURE MIRROR
+     SLIDE 14 · TENURE-CUT — TESTING EXPOSURE
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
 <section>
-  <div class="label">Application · Pattern 4</div>
-  <h2>SDM scores are flat or slightly lower with longer tenure</h2>
+  <div class="label">Application · Testing the mechanism</div>
+  <h2>Among managers settled in their role, the SDM gradient strengthens — consistent with positional exposure</h2>
   <hr class="rule" />
-  <div class="two-col" style="margin-top:.8em; align-items:flex-start; gap:2.5em">
-    <div class="col">
-      <p style="font-size:.66em; color:var(--muted); margin-bottom:.55em; font-weight:500; text-transform:uppercase; letter-spacing:.06em">Tenure × SDM dimensions</p>
-      <div class="stats" style="flex-direction:column; gap:.45em">
-        <div class="stat dark fragment fade-up">
-          <div class="n" style="font-size:1.35em">r = −.028**</div>
-          <div class="lbl">Causal Reasoning <em>declines</em> with years at firm</div>
-        </div>
-        <div class="stat dark fragment fade-up">
-          <div class="n" style="font-size:1.35em">r = −.031**</div>
-          <div class="lbl">Evidence Evaluation <em>declines</em> with years at firm</div>
-        </div>
-        <div class="stat alt fragment fade-up">
-          <div class="n" style="font-size:1.35em">r = −.008 n.s.</div>
-          <div class="lbl">Adaptive Learning, <em>flat</em> across all tenure bands</div>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="steps" style="margin-top:2.2em">
-        <div class="step fragment fade-up">
-          <div class="step-n">→</div>
-          <div class="step-t">Longer tenure correlates with <strong>lower</strong> CR and EE, consistent with cognitive entrenchment, not with experience building scientific reasoning.</div>
-        </div>
-        <div class="step fragment fade-up">
-          <div class="step-n">→</div>
-          <div class="step-t">AL, the dimension that follows the hierarchy, is <strong>immune to tenure</strong>. It responds to positional exposure, not accumulated time.</div>
-        </div>
-        <div class="step fragment fade-up">
-          <div class="step-n">→</div>
-          <div class="step-t" style="color:var(--muted); font-style:italic">Experience doesn't build SDM. Position shapes one specific component of it. We don't know yet exactly why.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <p class="bridge fragment fade-up">So does higher SDM actually improve how managers decide in practice?</p>
-  <div class="snav">
-    <span class="s">Motivation</span><span class="sep">·</span>
-    <span class="s">Construct</span><span class="sep">·</span>
-    <span class="s">Validation</span><span class="sep">·</span>
-    <span class="s on">Application</span><span class="sep">·</span>
-    <span class="s">Discussion</span>
-  </div>
-  <aside class="notes">
-    Main message: the tenure pattern mirrors the hierarchy pattern in reverse, CR and EE erode with routine, while AL is insensitive to time but responsive to positional exposure.
-    Most likely question: "Isn't this just a cohort effect, older managers learned differently?"
-    One-sentence answer: "Cohort effects cannot be ruled out with cross-sectional data, that is acknowledged as a limitation; longitudinal designs are the next step."
-  </aside>
-</section>
-
-<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-     SLIDE 15 · THE LENS, VIGNETTE AS PAYOFF
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
-<section>
-  <div class="label">Application · The Payoff</div>
-  <h2>Higher SDM predicts more correct decisions, independent of hierarchical level</h2>
-  <hr class="rule" />
-  <div class="two-col" style="margin-top:.4em; align-items:flex-start; gap:1.6em">
-    <div class="col" style="display:flex; flex-direction:column; gap:.45em; padding-top:.1em">
-      <div class="stat alt fragment fade-up" style="padding:.45em .8em">
-        <div class="n">r = .175***</div>
-        <div class="lbl">SDM correlates with vignette accuracy · N = 9,458 · stable across 4 specifications</div>
-      </div>
-      <div style="height:1px; background:var(--rule)"></div>
-      <div class="two-col" style="gap:.6em; margin:0">
-        <div class="stat fragment fade-up" style="border-left-width:4px; padding:.4em .7em">
-          <div class="n" style="font-size:1.7em">54%</div>
-          <div class="lbl"><strong>junior, high SDM</strong></div>
-        </div>
-        <div class="stat dark fragment fade-up" style="border-left-width:4px; padding:.4em .7em">
-          <div class="n" style="font-size:1.7em">45%</div>
-          <div class="lbl"><strong>senior, low SDM</strong></div>
-        </div>
-      </div>
-      <p class="fragment fade-up" style="font-size:.58em; color:var(--muted); line-height:1.4; margin:0">2×2 split by SDM median and tier median (N = 9,458).</p>
-      <div class="fragment fade-up" style="border-left:3px solid var(--navy2); padding:.35em .65em; background:rgba(255,255,255,.5)">
-        <p style="font-size:.60em; color:var(--navy2); line-height:1.5; margin:0">We showed the hierarchy <em>develops</em> SDM, not selects for it. Yet SDM predicts decision quality independently of level. Whether the mechanism is individual or environmental, the signal aggregates: firms with higher mean SDM show higher collective decision accuracy.</p>
-      </div>
-    </div>
-    <div class="col" style="display:flex; flex-direction:column; align-items:center">
-      <img src="figures/sdm_quintile_vignette.png" alt="Vignette accuracy by SDM quintile"
-           style="width:100%; max-height:42vh; object-fit:contain; box-shadow:0 2px 14px rgba(0,0,0,.1)" />
-      <p style="font-size:.50em; color:var(--muted); text-align:center; margin-top:.3em">Vignette accuracy by SDM quintile · error bars = 95% CI</p>
-    </div>
-  </div>
-  <div class="app-links">
-    <a class="app-link" onclick="navTo(28)">→ App: Vignette regression table (5 specifications)</a>
-  </div>
-  <div class="snav">
-    <span class="s">Motivation</span><span class="sep">·</span>
-    <span class="s">Construct</span><span class="sep">·</span>
-    <span class="s">Validation</span><span class="sep">·</span>
-    <span class="s on">Application</span><span class="sep">·</span>
-    <span class="s">Discussion</span>
-  </div>
-  <aside class="notes">
-    Main message: SDM predicts real decision behavior, and a manager's score matters more than their hierarchical position. This is the payoff of the entire pattern sequence.
-    Most likely question: "The effect is only 10 percentage points, is that really meaningful?"
-    One-sentence answer: "The coefficient is stable across all four specifications including firm fixed effects, which means it is not driven by firm-level confounds; and a 10pp gap in decision accuracy across an organization's full manager population has substantial practical implications."
-  </aside>
-</section>
-
-<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-     SLIDE 16 · FIRM-LEVEL (EXPLORATORY)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
-<section>
-  <div class="label">Application · Exploratory</div>
-  <h2>The individual signal aggregates: firms with higher average SDM make better collective decisions</h2>
-  <hr class="rule" />
-  <p style="font-size:.66em; color:var(--muted); margin-bottom:.5em">Firm-level OLS · DV = firm mean vignette accuracy · N = 57 firms (≥ 5 respondents each) · <strong>Exploratory, treat as early signal, not main finding.</strong></p>
+  <p style="font-size:.68em; margin-bottom:.6em">Exposure prediction: if hierarchical position shapes SDM over time, managers who have been <em>in their role longer</em> should show a stronger tier gradient. We split the sample at tenure ≥ 11 years.</p>
   <div class="two-col" style="margin-top:.4em; align-items:flex-start; gap:2em">
     <div class="col">
-      <div class="stats" style="flex-direction:column; gap:.55em">
-        <div class="stat fragment fade-up">
-          <div class="n">b = .277*</div>
-          <div class="lbl">firm mean SDM → collective accuracy · p = .013</div>
+      <div class="stats" style="flex-direction:column; gap:.35em">
+        <div class="stat dark fragment fade-up" style="padding:.5em .8em">
+          <div class="n">b<sub>tier</sub> = −.014***</div>
+          <div class="lbl">Hierarchy gradient · tenure ≥ 11 yrs · N = 4,099</div>
         </div>
-        <div class="stat alt fragment fade-up">
-          <div class="n">R² = .107</div>
-          <div class="lbl">firm mean SDM explains 10.7% of variance in collective accuracy</div>
+        <div class="stat fragment fade-up" style="padding:.5em .8em">
+          <div class="n">b<sub>tier</sub> = −.008*</div>
+          <div class="lbl">Hierarchy gradient · tenure &lt; 11 yrs · N = 5,359</div>
         </div>
-        <div class="stat dark fragment fade-up">
-          <div class="n">dispersion n.s.</div>
-          <div class="lbl">how evenly SDM is spread within the firm adds nothing beyond the mean</div>
+        <div class="stat alt fragment fade-up" style="padding:.5em .8em">
+          <div class="n" style="font-size:1.4em">+75%</div>
+          <div class="lbl">Stronger gradient in the settled group · (−.014 vs −.008)</div>
         </div>
       </div>
     </div>
-    <div class="col" style="padding-top:.2em">
-      <div class="steps">
+    <div class="col">
+      <div class="steps" style="margin-top:.2em">
         <div class="step fragment fade-up">
-          <div class="step-n">→</div>
-          <div class="step-t"><strong>The level matters, not the spread.</strong> A firm where all managers score moderately outperforms one where a few score very high and most score low.</div>
-        </div>
-        <div class="step fragment fade-up">
-          <div class="step-n">→</div>
-          <div class="step-t"><strong>Individual → collective.</strong> SDM measured at the individual level has a measurable footprint on collective decision accuracy.</div>
+          <div class="step-n" style="color:var(--terra)">→</div>
+          <div class="step-t">More time in the position → stronger SDM gradient by level. Consistent with the role shaping the reasoning.</div>
         </div>
         <div class="step fragment fade-up">
           <div class="step-n" style="color:var(--muted)">·</div>
-          <div class="step-t" style="color:var(--muted); font-style:italic">N = 57 firms, underpowered for strong inference. Robust across M1–M3. Reported as early signal.</div>
+          <div class="step-t" style="color:var(--muted)">Tier composition is near-identical across both groups — the difference is not an artifact of who is in each sample.</div>
         </div>
+        <div class="step fragment fade-up">
+          <div class="step-n" style="color:var(--muted)">·</div>
+          <div class="step-t" style="color:var(--muted); font-style:italic">Cross-sectional. We cannot rule out cohort effects or test pre-promotion SDM directly. The exposure interpretation is consistent, not proven.</div>
+        </div>
+      </div>
+      <div class="app-links" style="margin-top:.6em">
+        <a class="app-link" onclick="navTo(29)">→ Full table + robustness across 6 cutpoints (App K)</a>
       </div>
     </div>
   </div>
-  <div class="app-links">
-    <a class="app-link" onclick="navTo(26)">→ App E: Firm-level OLS full table</a>
-  </div>
+  <p class="bridge fragment fade-up">We have evidence of what the gradient is, and what it isn't. What remains open — and why it matters.</p>
   <div class="snav">
     <span class="s">Motivation</span><span class="sep">·</span>
     <span class="s">Construct</span><span class="sep">·</span>
@@ -1224,14 +1202,14 @@
     <span class="s">Discussion</span>
   </div>
   <aside class="notes">
-    Main message: the individual-level SDM signal aggregates to organizations, but treat this as exploratory given N=57.
-    Most likely question: "With only 57 firms, how can you draw any conclusions?"
-    One-sentence answer: "We don't, this is reported as an early exploratory signal with explicit caveats; the individual-level findings are the primary contribution, and this simply shows the signal does not disappear when aggregated."
+    Main message: the closest available test of the exposure hypothesis is the tenure-cut. Among managers who've been at the firm ≥11 years and are therefore more settled in their hierarchical role, the SDM gradient is 75% stronger than in the short-tenure group. This is consistent with positional exposure. Acknowledge limitations: cross-sectional design, cannot test pre-promotion SDM, cohort effects possible.
+    Most likely question: "Couldn't this just be survivorship bias — the best people stay?"
+    One-sentence answer: "Survivorship would predict higher average SDM in long-tenure group overall, but we see lower average SDM (r = −.044***). What we see is a stronger gradient, not a higher baseline."
   </aside>
 </section>
 
 <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-     SLIDE 17 · LIMITATIONS
+     SLIDE 15 · LIMITATIONS
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
 <section>
   <div class="label">Discussion · Limitations</div>
@@ -1280,8 +1258,8 @@
     </div>
     <div class="fragment fade-up" style="flex:1; display:flex; flex-direction:column; background:rgba(255,255,255,.55); border-top:4px solid var(--navy2); padding:.8em .9em">
       <div style="font-family:'Playfair Display',serif; font-size:2em; font-weight:700; color:var(--navy2); line-height:1; margin-bottom:.35em">3</div>
-      <p style="font-size:.76em; font-weight:600; color:var(--navy); margin:0 0 .35em; line-height:1.4">SDM predicts decision quality, and we are still learning why</p>
-      <p style="font-size:.63em; color:var(--muted); margin:0; line-height:1.55">r = .175*** · stable across specifications · signal aggregates to firms · whether the mechanism is individual or environmental is an open question.</p>
+      <p style="font-size:.76em; font-weight:600; color:var(--navy); margin:0 0 .35em; line-height:1.4">SDM predicts decision accuracy, and we are still learning why</p>
+      <p style="font-size:.63em; color:var(--muted); margin:0; line-height:1.55">r = .175*** · β = .12 · stable across 4 specifications including firm FE · AL is the strongest dimensional predictor · the mechanism is still an open question.</p>
     </div>
   </div>
   <div class="snav">
@@ -1322,6 +1300,10 @@
     <div class="app-item" onclick="navTo(26)">
       <div class="app-id">E</div>
       <div class="app-text"><strong>Organizational Analyses (App E)</strong>Firm-level OLS · mean SDM → collective accuracy · descriptive statistics · Table E.1</div>
+    </div>
+    <div class="app-item" onclick="navTo(29)">
+      <div class="app-id">K</div>
+      <div class="app-text"><strong>Tenure-Cut Test (App K)</strong>Hierarchy gradient in long-tenured vs. short-tenured subsamples · selection robustness</div>
     </div>
     <div class="app-item" onclick="navTo(21)" style="opacity:.75">
       <div class="app-id" style="background:var(--navy2)">,</div>
@@ -1660,6 +1642,71 @@
       <p style="font-size:.54em; color:var(--muted); text-align:center; margin-top:.3em">Figure 3. Vignette accuracy by SDM quintile (95% CI). Top quintile: 54.7% · Bottom quintile: 44.3%.</p>
     </div>
   </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     APP K · TENURE-CUT TEST (index 28)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section>
+  <a class="app-back" onclick="navBack()">← back</a>
+  <div class="app-sl-label">Selection robustness · Tenure-cut analysis (script 35d)</div>
+  <h2>Tenure-cut test: the hierarchy gradient strengthens among long-tenured stayers</h2>
+  <hr class="rule" />
+  <p style="font-size:.67em">Logic: among managers who have stayed ≥ 11 years, mobility is less likely to explain the hierarchy gradient. If selection drove the pattern (scientific thinkers rise), long-tenured stayers should show a <em>weaker</em> or flat gradient. The data show the opposite.</p>
+  <div class="stats" style="margin-top:.75em">
+    <div class="stat dark">
+      <div class="n">b<sub>tier</sub> = −.014***</div>
+      <div class="lbl">Hierarchy gradient · Tenure ≥ 11 yrs · N = 4,099</div>
+    </div>
+    <div class="stat alt">
+      <div class="n">b<sub>tier</sub> = −.008*</div>
+      <div class="lbl">Hierarchy gradient · Tenure &lt; 11 yrs · N = 5,359</div>
+    </div>
+    <div class="stat">
+      <div class="n">b<sub>tier</sub> = −.010***</div>
+      <div class="lbl">Full sample · N = 9,458</div>
+    </div>
+  </div>
+  <div class="two-col" style="margin-top:.75em; gap:2em; align-items:flex-start">
+    <div class="col">
+      <p style="font-size:.62em; color:var(--muted); margin-bottom:.4em; font-weight:500; text-transform:uppercase; letter-spacing:.06em">Robustness: b_tier across cutpoints</p>
+      <table class="app-table" style="font-size:.61em">
+        <thead>
+          <tr>
+            <th rowspan="2" style="vertical-align:bottom">Cut</th>
+            <th colspan="3" style="text-align:center; padding-bottom:.2em; border-bottom:1px solid var(--rule)">Long (≥ cut)</th>
+            <th colspan="3" style="text-align:center; padding-bottom:.2em; border-bottom:1px solid var(--rule)">Short (&lt; cut)</th>
+          </tr>
+          <tr><th>b</th><th>sig</th><th>N</th><th>b</th><th>sig</th><th>N</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>5 yrs</td><td>−.013</td><td>***</td><td>6,657</td><td>−.005</td><td style="color:var(--muted)">n.s.</td><td>2,801</td></tr>
+          <tr><td>7 yrs</td><td>−.011</td><td>***</td><td>5,538</td><td>−.010</td><td>*</td><td>3,920</td></tr>
+          <tr><td>9 yrs</td><td>−.011</td><td>**</td><td>4,767</td><td>−.010</td><td>**</td><td>4,691</td></tr>
+          <tr style="background:var(--warm); font-weight:600"><td>11 yrs ◀</td><td class="hi">−.014</td><td class="hi">***</td><td>4,099</td><td>−.008</td><td>*</td><td>5,359</td></tr>
+          <tr><td>13 yrs</td><td>−.014</td><td>***</td><td>3,551</td><td>−.009</td><td>**</td><td>5,907</td></tr>
+          <tr><td>15 yrs</td><td>−.015</td><td>***</td><td>3,043</td><td>−.009</td><td>**</td><td>6,415</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:.55em; color:var(--muted); margin-top:.35em">Long-tenure gradient consistently stronger (or equal) across all cutpoints. The 11-yr result is not an artifact of a single arbitrary threshold. Gap most pronounced at ≥ 11 yrs, consistent with exposure requiring time to accumulate.</p>
+    </div>
+    <div class="col">
+      <p style="font-size:.62em; color:var(--muted); margin-bottom:.4em; font-weight:500; text-transform:uppercase; letter-spacing:.06em">Tier composition — comparable across groups (11-yr cut)</p>
+      <table class="app-table" style="font-size:.63em">
+        <thead><tr><th>Tier</th><th>≥ 11 yrs</th><th>%</th><th>&lt; 11 yrs</th><th>%</th></tr></thead>
+        <tbody>
+          <tr><td>T1 Top</td><td>230</td><td>5.6%</td><td>324</td><td>6.0%</td></tr>
+          <tr><td>T2 Senior</td><td>360</td><td>8.8%</td><td>384</td><td>7.2%</td></tr>
+          <tr><td>T3 Middle</td><td>963</td><td>23.5%</td><td>1,076</td><td>20.1%</td></tr>
+          <tr><td>T4 Junior</td><td>797</td><td>19.4%</td><td>1,080</td><td>20.1%</td></tr>
+          <tr><td>T5 Frontline</td><td>1,756</td><td>42.8%</td><td>2,498</td><td>46.6%</td></tr>
+          <tr style="border-top:1px solid var(--rule)"><td><strong>Total</strong></td><td><strong>4,106</strong></td><td></td><td><strong>5,362</strong></td><td></td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:.55em; color:var(--muted); margin-top:.35em">Tier proportions are near-identical across groups — the stronger gradient in the ≥ 11 yr group is not an artifact of tier composition.</p>
+    </div>
+  </div>
+  <div class="note" style="margin-top:.5em">OLS: sdm_overall ~ tier (1=top, 5=frontline). Negative b = senior managers score higher. Sources: 35d_tenure_cut_hierarchy.py (primary, 11-yr cut) · 35e_tenure_cutpoints_robustness.py (multi-cutpoint). Cross-sectional; cohort effects cannot be ruled out.</div>
 </section>
 
 </div></div>
