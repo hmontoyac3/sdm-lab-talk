@@ -684,13 +684,13 @@
       </tr>
       <tr>
         <td>2</td><td>Indicator non-redundancy</td>
-        <td>Variance Inflation Factor (VIF) · each item regressed on remaining 23</td>
+        <td>Variance Inflation Factor (VIF) · each item regressed on remaining 23 · Interval</td>
         <td>VIF 1.03–1.19 · tolerance .84–.97 · all well below threshold of 3</td>
         <td class="badge">✓</td>
       </tr>
       <tr>
         <td>3</td><td>Structural distinguishability</td>
-        <td>CFA · 1, 2, 3, 6-factor specs compared · key test: 3 vs. 2 factors (EE–AL correlation r = .95)</td>
+        <td>Conf F. Analysis · 1, 2, 3, 6-factor specs compared · key test: 3 vs. 2 factors (EE–AL correlation r = .95)</td>
         <td>Δχ²(1) = 131.86, p &lt; .001 · EE and AL are empirically distinct</td>
         <td class="badge">✓</td>
       </tr>
@@ -1180,6 +1180,10 @@
           <div class="step-t">More time in the position → stronger SDM gradient by level. Consistent with the role shaping the reasoning.</div>
         </div>
         <div class="step fragment fade-up">
+          <div class="step-n" style="color:var(--terra)">→</div>
+          <div class="step-t">Amplification is specific to <strong>Adaptive Learning</strong> (1.48×). CR and EE erode in both groups — the AL dimension is what exposure builds.</div>
+        </div>
+        <div class="step fragment fade-up">
           <div class="step-n" style="color:var(--muted)">·</div>
           <div class="step-t" style="color:var(--muted)">Tier composition is near-identical across both groups — the difference is not an artifact of who is in each sample.</div>
         </div>
@@ -1225,7 +1229,7 @@
     </div>
     <div class="q">
       <div class="q-tag" style="color:var(--navy2)">Open</div>
-      <div class="q-body">There is still a lot to learn. What builds SDM? Does it change over time? Can it be trained? Does it predict organizational outcomes beyond vignettes? These are the questions the instrument now makes possible to ask.</div>
+      <div class="q-body">There is still a lot to learn. </div>
     </div>
   </div>
   <div class="snav">
@@ -1690,22 +1694,27 @@
       <p style="font-size:.55em; color:var(--muted); margin-top:.35em">Long-tenure gradient consistently stronger (or equal) across all cutpoints. The 11-yr result is not an artifact of a single arbitrary threshold. Gap most pronounced at ≥ 11 yrs, consistent with exposure requiring time to accumulate.</p>
     </div>
     <div class="col">
-      <p style="font-size:.62em; color:var(--muted); margin-bottom:.4em; font-weight:500; text-transform:uppercase; letter-spacing:.06em">Tier composition — comparable across groups (11-yr cut)</p>
-      <table class="app-table" style="font-size:.63em">
-        <thead><tr><th>Tier</th><th>≥ 11 yrs</th><th>%</th><th>&lt; 11 yrs</th><th>%</th></tr></thead>
+      <p style="font-size:.62em; color:var(--muted); margin-bottom:.4em; font-weight:500; text-transform:uppercase; letter-spacing:.06em">Dimensional breakdown: b_tier per dimension (11-yr cut)</p>
+      <table class="app-table" style="font-size:.60em">
+        <thead>
+          <tr>
+            <th>Dim</th>
+            <th>b (≥ 11 yrs)</th><th>sig</th>
+            <th>b (&lt; 11 yrs)</th><th>sig</th>
+            <th>ratio</th>
+          </tr>
+        </thead>
         <tbody>
-          <tr><td>T1 Top</td><td>230</td><td>5.6%</td><td>324</td><td>6.0%</td></tr>
-          <tr><td>T2 Senior</td><td>360</td><td>8.8%</td><td>384</td><td>7.2%</td></tr>
-          <tr><td>T3 Middle</td><td>963</td><td>23.5%</td><td>1,076</td><td>20.1%</td></tr>
-          <tr><td>T4 Junior</td><td>797</td><td>19.4%</td><td>1,080</td><td>20.1%</td></tr>
-          <tr><td>T5 Frontline</td><td>1,756</td><td>42.8%</td><td>2,498</td><td>46.6%</td></tr>
-          <tr style="border-top:1px solid var(--rule)"><td><strong>Total</strong></td><td><strong>4,106</strong></td><td></td><td><strong>5,362</strong></td><td></td></tr>
+          <tr><td>Overall</td><td>−.014</td><td>***</td><td>−.008</td><td>*</td><td>1.73×</td></tr>
+          <tr><td>CR</td><td>−.008</td><td style="color:var(--muted)">n.s.</td><td>−.013</td><td>**</td><td style="color:var(--muted)">0.65×</td></tr>
+          <tr><td>EE</td><td>−.002</td><td style="color:var(--muted)">n.s.</td><td>+.011</td><td>*</td><td style="color:var(--muted)">−0.20×</td></tr>
+          <tr style="background:var(--warm); font-weight:600"><td>AL ◀</td><td class="hi">−.035</td><td class="hi">***</td><td>−.024</td><td>***</td><td class="hi">1.48×</td></tr>
         </tbody>
       </table>
-      <p style="font-size:.55em; color:var(--muted); margin-top:.35em">Tier proportions are near-identical across groups — the stronger gradient in the ≥ 11 yr group is not an artifact of tier composition.</p>
+      <p style="font-size:.55em; color:var(--muted); margin-top:.35em">Gradient amplification in long-tenure is specific to AL. CR and EE erode in both groups. Source: 35h_tenure_cut_dimensions.py.</p>
     </div>
   </div>
-  <div class="note" style="margin-top:.5em">OLS: sdm_overall ~ tier (1=top, 5=frontline). Negative b = senior managers score higher. Sources: 35d_tenure_cut_hierarchy.py (primary, 11-yr cut) · 35e_tenure_cutpoints_robustness.py (multi-cutpoint). Cross-sectional; cohort effects cannot be ruled out.</div>
+  <div class="note" style="margin-top:.5em">OLS: sdm_overall ~ tier (1=top, 5=frontline). Negative b = senior managers score higher. Sources: 35d_tenure_cut_hierarchy.py (primary, 11-yr cut) · 35e_tenure_cutpoints_robustness.py (multi-cutpoint) · 35h_tenure_cut_dimensions.py (dimensional breakdown). Cross-sectional; cohort effects cannot be ruled out.</div>
 </section>
 
 </div></div>
